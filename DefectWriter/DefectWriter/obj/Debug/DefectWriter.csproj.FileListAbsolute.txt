@@ -1,0 +1,5 @@
+E:\X3\WorkingFolder\DefectWriter\DefectWriter\DefectWriter\bin\DefectWriter.dll
+E:\X3\WorkingFolder\DefectWriter\DefectWriter\DefectWriter\bin\DefectWriter.pdb
+E:\X3\WorkingFolder\DefectWriter\DefectWriter\DefectWriter\obj\Debug\ResolveAssemblyReference.cache
+E:\X3\WorkingFolder\DefectWriter\DefectWriter\DefectWriter\obj\Debug\DefectWriter.dll
+E:\X3\WorkingFolder\DefectWriter\DefectWriter\DefectWriter\obj\Debug\DefectWriter.pdb
