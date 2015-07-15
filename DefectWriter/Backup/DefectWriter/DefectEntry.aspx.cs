@@ -10,14 +10,6 @@ namespace DefectWriter
 {
     public partial class DefectEntry : System.Web.UI.Page
     {
-        const string kEmailAddr = "Enter the destination address you want your defect emailed to";
-        const string kCaseNumber = "Enter the case number this issue applies to";
-        const string kDefectSummary = "Summary is a concise, to the point problem definition for the defect";
-        const string kStepsToDupeTT = @"Steps to duplicate should be written in a way that allows someone unfamiliar to the product 
-            to reproduce the issue relatively easily. Include the necessary references to data (item number, customer number, etc..)
-            when appropriate. ";
-        const string kExpectedResults = "Please be detailed"
-
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -75,11 +67,6 @@ namespace DefectWriter
         private void EmailResults()
         {
 
-        }
-
-        private void SetToolTips()
-        {
-            txtStepsToDuplicate.Text = kStepsToDupeTT;
         }
 
 

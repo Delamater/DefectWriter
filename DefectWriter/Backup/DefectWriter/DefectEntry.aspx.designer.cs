@@ -76,15 +76,6 @@ namespace DefectWriter {
         protected global::System.Web.UI.WebControls.RegularExpressionValidator regexCaseNumber;
         
         /// <summary>
-        /// RequiredFieldValidator1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
-        
-        /// <summary>
         /// txtSummary control.
         /// </summary>
         /// <remarks>
@@ -92,15 +83,6 @@ namespace DefectWriter {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtSummary;
-        
-        /// <summary>
-        /// rfvStepsToDuplicate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvStepsToDuplicate;
         
         /// <summary>
         /// txtStepsToDuplicate control.

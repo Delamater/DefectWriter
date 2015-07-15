@@ -24,7 +24,6 @@
             ControlToValidate="txtCaseNumber" ErrorMessage="Error" Font-Bold="True" 
             ForeColor="Red" SetFocusOnError="True" ToolTip="Must be a valid number" 
             ValidationExpression="\d{10}">Error</asp:RegularExpressionValidator>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="***Error" ForeColor="Red" ToolTip="Case number is required"></asp:RequiredFieldValidator>
         <br />
         <br />
         <br />
@@ -32,15 +31,14 @@
     <asp:TextBox ID="txtSummary" runat="server" Width="100%" MaxLength="66"></asp:TextBox>
         <br />
         <br />
-        Steps To Duplicate:
-        <asp:RequiredFieldValidator ID="rfvStepsToDuplicate" runat="server" ControlToValidate="txtStepsToDuplicate" ErrorMessage="Steps to duplicate are required" ForeColor="Red"></asp:RequiredFieldValidator>
-        <br />
-    <asp:TextBox ID="txtStepsToDuplicate" runat="server" Height="100px" 
+        Steps To Duplicate:<br />
+        <asp:TextBox ID="txtStepsToDuplicate" runat="server" Height="100px" 
+            TextMode="MultiLine" Width="100%"></asp:TextBox>
+    <br />
+    <br />
+    Expected Results<br />
+    <asp:TextBox ID="txtExpectedResults" runat="server" Height="50px" 
         TextMode="MultiLine" Width="100%"></asp:TextBox>
-        <br />
-        <br />
-        Expected Results<br />
-        <asp:TextBox ID="txtExpectedResults" runat="server" Height="50px" TextMode="MultiLine" Width="100%"></asp:TextBox>
     <br />
     <br />
     Customer Company Name:<br />
