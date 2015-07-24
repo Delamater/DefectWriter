@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="DefectWriter" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^F:\\X3\\WorkingFolder\\GitHub\\DefectWriter\\DefectWriter\\DefectWriter\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^F:\\X3\\WorkingFolder\\GitHub\\DefectWriter\\DefectWriter\\DefectWriter\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="ApplicationServices-Web.config Connection String" description="" value="data source=.\SQLEXPRESS;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|\aspnetdb.mdf;User Instance=true" tags="">
+    <parameterEntry kind="XmlFile" scope="F:\\X3\\WorkingFolder\\GitHub\\DefectWriter\\DefectWriter\\DefectWriter\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ApplicationServices']/@connectionString" />
+  </parameter>
+  <parameter name="SupportConnectionString-Web.config Connection String" description="" value="Data Source=caix3irvrepo;Initial Catalog=Support;Integrated Security=True" tags="">
+    <parameterEntry kind="XmlFile" scope="F:\\X3\\WorkingFolder\\GitHub\\DefectWriter\\DefectWriter\\DefectWriter\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='SupportConnectionString']/@connectionString" />
+  </parameter>
+</parameters>

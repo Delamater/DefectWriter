@@ -439,8 +439,8 @@
     <Content Include="ckeditor\skins\moono\images\refresh.png" />
     <Content Include="ckeditor\skins\moono\images\spinner.gif" />
     <Content Include="ckeditor\styles.js" />
+    <Content Include="DefectEntry_old.aspx" />
     <Content Include="DefectEntry.aspx" />
-    <Content Include="DefectEntry3.aspx" />
     <Content Include="Reminders.aspx" />
     <Content Include="seedEmployeeTable.sql" />
     <Content Include="Styles\Site.css" />
@@ -501,19 +501,19 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DefectEntry_old.aspx.cs">
+      <DependentUpon>DefectEntry_old.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DefectEntry_old.aspx.designer.cs">
+      <DependentUpon>DefectEntry_old.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DefectEntry.aspx.cs">
       <DependentUpon>DefectEntry.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="DefectEntry.aspx.designer.cs">
       <DependentUpon>DefectEntry.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="DefectEntry3.aspx.cs">
-      <DependentUpon>DefectEntry3.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DefectEntry3.aspx.designer.cs">
-      <DependentUpon>DefectEntry3.aspx</DependentUpon>
     </Compile>
     <Compile Include="DefectMgr.cs" />
     <Compile Include="Global.asax.cs">
