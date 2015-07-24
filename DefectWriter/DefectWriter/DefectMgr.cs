@@ -14,6 +14,10 @@ namespace DefectWriter
         StringBuilder output = new StringBuilder();
 
         private string _summary = "";
+        private string _majorVersion = "";
+        private string _minorVersion = "";
+        private string _priority = "";
+        private string _criticalHighReason = "";
         private string _stepsToDupe = "";
         private string _expectedResults = "";
         private string _customerCompanyName = "";
@@ -21,16 +25,17 @@ namespace DefectWriter
         private string _dbVersion = "";
         private string _dbType = "";
         private string _reasonForCriticalOrHigh = "";
-        private string _customerExpectations = "";
+        //private string _customerExpectations = "";
         private string _typeOfRequest = "";
         private string _frequency = "";
         private bool _canDuplicate = false;
         private string _workaround = "";
         private bool _isWorkaroundAcceptable = false;
+        private string _WorkaroundNotAcceptableReason = "";
         private string _locationOfResource = "";
         private bool _isCustomized = false;
         private bool _preventsKeyFunction = false;
-        private bool _no3rdPartyMods = false;
+        //private bool _no3rdPartyMods = false;
         private bool _canReproduceInUnmodifiedCode = false;
         private bool _NoWrokaroundOrWorkaroundIsNotAcceptable = false;
         private bool _isEnhancementRequest = false;
@@ -43,6 +48,30 @@ namespace DefectWriter
         {
             get { return _summary; }
             set { _summary = value; }
+        }
+
+        public string MajorVersion
+        {
+            get { return _majorVersion; }
+            set { _majorVersion = value; }
+        }
+
+        public string MinorVersion
+        {
+            get { return _minorVersion; }
+            set { _minorVersion = value; }
+        }
+
+        public string Priority
+        {
+            get { return _priority; }
+            set { _priority = value; }
+        }
+
+        public string CriticalHighReason
+        {
+            get { return _criticalHighReason; }
+            set { _criticalHighReason = value; }
         }
 
         public string StepsToDuplicate
@@ -112,6 +141,12 @@ namespace DefectWriter
             set { _workaround = value; }
         }
 
+        public string WorkaroundNotAcceptableReason
+        {
+            get { return _WorkaroundNotAcceptableReason; }
+            set { _WorkaroundNotAcceptableReason = value; }
+        }
+
         public bool IsWorkaroundAcceptable
         {
             get { return _isWorkaroundAcceptable; }
@@ -164,51 +199,64 @@ namespace DefectWriter
 
         #region Methods
         public string GetOutput(
-            string DefectSummary, 
-            string DefectStepsToDupe, 
-            string DefectExpectedResults,
-            string DefectCustomerCompanyName, 
-            string DefectPartnerCompanyName,
-            string DefectDbType, 
-            string DefectDbVersion,
-            string DefectReasonForCriticalOrHigh,
-            string DefectTypeOfRequest,
-            string DefectFrequency,
-            bool DefectCanDuplicate,
-            bool DefectIsWorkaroundAcceptable,
-            string DefectWorkaround,
-            string DefectLocationOfResource,
-            bool DefectPreventsKeyFunction,
-            bool No3rdPartyMods,
-            bool DefectCanReproduceInUnmodifiedCode,
-            bool DefectNoWorkaroundOrWorkaroundIsNotAcceptable,
-            bool DefectIsEnhancementRequest, 
-            double DefectCaseNumber)
+            string strDefectSummary, 
+            string strMajorVersion,
+            string strMinorVersion, 
+            string strPriority,
+            string strCriticalHighReason,
+            string strDefectStepsToDupe, 
+            string strDefectExpectedResults,
+            string strDefectCustomerCompanyName, 
+            string strDefectPartnerCompanyName,
+            string strDefectDbType, 
+            string strDefectDbVersion,
+            string strDefectReasonForCriticalOrHigh,
+            string strDefectTypeOfRequest,
+            string strDefectFrequency,
+            bool blnDefectCanDuplicate,
+            bool blnDefectIsWorkaroundAcceptable,
+            string strWorkaroundNotAcceptableReason,
+            string strDefectWorkaround,
+            string strDefectLocationOfResource,
+            bool blnDefectPreventsKeyFunction,
+            bool blnNo3rdPartyMods,
+            bool blnDefectCanReproduceInUnmodifiedCode,
+            bool blnDefectNoWorkaroundOrWorkaroundIsNotAcceptable,
+            bool blnDefectIsEnhancementRequest, 
+            double dblDefectCaseNumber)
             
         {
             
-            this.Summary = DefectSummary;
-            this.StepsToDuplicate = DefectStepsToDupe;
-            this.ExpectedResults = DefectExpectedResults;
-            this.CustomerCompanyName = DefectCustomerCompanyName;
-            this.PartnerCompanyName = DefectPartnerCompanyName;
-            this.DbType = DefectDbType;
-            this.DbVersion = DefectDbVersion;
-            this.ReasonForCriticalOrHigh = DefectReasonForCriticalOrHigh;
-            this.TypeOfRequest = DefectTypeOfRequest;
-            this.Frequency = DefectFrequency;
-            this.CanDuplicate = DefectCanDuplicate;
-            this.IsWorkaroundAcceptable = DefectIsWorkaroundAcceptable;
-            this.Workaround = DefectWorkaround;
-            this.LocationOfResource = DefectLocationOfResource;
-            this.PreventsKeyFunction = DefectPreventsKeyFunction;
-            this.No3rdPartyMods = No3rdPartyMods;
-            this.CanReproduceInUnmodifiedCode = DefectCanReproduceInUnmodifiedCode;
-            this.NoWorkaroundOrWorkaroundIsUnacceptable = DefectNoWorkaroundOrWorkaroundIsNotAcceptable;
-            this.IsEnhancementRequest = DefectIsEnhancementRequest;
-            this.CaseNumber = DefectCaseNumber;
+            this.Summary = strDefectSummary;
+            this.MajorVersion = strMajorVersion;
+            this.MinorVersion= strMinorVersion;
+            this.Priority = strPriority;
+            this.ReasonForCriticalOrHigh = strCriticalHighReason;
+            this.StepsToDuplicate = strDefectStepsToDupe;
+            this.ExpectedResults = strDefectExpectedResults;
+            this.CustomerCompanyName = strDefectCustomerCompanyName;
+            this.PartnerCompanyName = strDefectPartnerCompanyName;
+            this.DbType = strDefectDbType;
+            this.DbVersion = strDefectDbVersion;
+            this.ReasonForCriticalOrHigh = strDefectReasonForCriticalOrHigh;
+            this.TypeOfRequest = strDefectTypeOfRequest;
+            this.Frequency = strDefectFrequency;
+            this.CanDuplicate = blnDefectCanDuplicate;
+            this.IsWorkaroundAcceptable = blnDefectIsWorkaroundAcceptable;
+            this.WorkaroundNotAcceptableReason = strWorkaroundNotAcceptableReason;
+            this.Workaround = strDefectWorkaround;
+            this.LocationOfResource = strDefectLocationOfResource;
+            this.PreventsKeyFunction = blnDefectPreventsKeyFunction;
+            this.No3rdPartyMods = blnNo3rdPartyMods;
+            this.CanReproduceInUnmodifiedCode = blnDefectCanReproduceInUnmodifiedCode;
+            this.NoWorkaroundOrWorkaroundIsUnacceptable = blnDefectNoWorkaroundOrWorkaroundIsNotAcceptable;
+            this.IsEnhancementRequest = blnDefectIsEnhancementRequest;
+            this.CaseNumber = dblDefectCaseNumber;
 
             AppendLine("Summary For Case #:" + this.CaseNumber.ToString() + " ", this.Summary);
+            AppendLine("Major Version: ", this.MajorVersion);
+            AppendLine("Minor Version: ", this.MinorVersion);
+            AppendLine("Priority: ", this.Priority);
             AppendLine("Steps to Duplicate:", this.StepsToDuplicate);
             AppendLine("Expected Results:", this.ExpectedResults);
             AppendLine("Customer Company Name:", this.CustomerCompanyName);
@@ -221,6 +269,16 @@ namespace DefectWriter
             AppendLine("Can duplicate?:", this.CanDuplicate.ToString());
             AppendLine("Is Workaround Acceptable?:", this.IsWorkaroundAcceptable.ToString());
             AppendLine("Workaround: ", this.Workaround);
+            
+            if (!string.IsNullOrEmpty(this.WorkaroundNotAcceptableReason))
+            {
+                AppendLine("Workaround Not Acceptable Reason:", this.WorkaroundNotAcceptableReason);
+            }
+            else
+            {
+                AppendLine("Workaround Not Acceptable Reason:", "N/A");
+            }
+
             AppendLine("Location of Resource:", this.LocationOfResource);
             AppendLine("Priority Checklist", "__________________________________");
             AppendLine("Prevents Key Function:", this.PreventsKeyFunction.ToString());
@@ -229,12 +287,8 @@ namespace DefectWriter
             AppendLine("No Workaround or Workaround is Not Acceptable?:", this.NoWorkaroundOrWorkaroundIsUnacceptable.ToString());
             AppendLine("Is Enhancement Request?:", this.IsEnhancementRequest.ToString());
 
-
-
-
             return output.ToString();
 
-            
         }
 
         public string foo()

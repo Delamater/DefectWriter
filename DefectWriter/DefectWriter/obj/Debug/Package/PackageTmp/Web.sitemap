@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
-    <siteMapNode url="Default.aspx" title="File"  description="File">
-		<siteMapNode url="Site.Master" title="Home" description="Home" />
-        <siteMapNode url="Default.aspx" title="File"  description="File" />
-        <siteMapNode url="DefectEntry.aspx" title="Defect Entry"  description="Create a new defect or enhancement" />
-    </siteMapNode>
-</siteMap>

@@ -6,6 +6,7 @@
     <title></title>
     <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
     <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+        <script src="App_Data/ckeditor/config.js"></script>
     </asp:ContentPlaceHolder>
 </head>
 <body>
@@ -35,7 +36,7 @@
                     onmenuitemclick="NavigationMenu_MenuItemClick">
                     <Items>
                         <asp:MenuItem NavigateUrl="~/Default.aspx" Text="File" Value="File">
-                            <asp:MenuItem NavigateUrl="~/DefectEntry.aspx" Text="New Defect" 
+                            <asp:MenuItem NavigateUrl="~/DefectEntry3.aspx" Text="New Defect" 
                                 Value="New Defect"></asp:MenuItem>
                             <asp:MenuItem NavigateUrl="~/Reminders.aspx" Text="Reminders" Value="Reminders">
                             </asp:MenuItem>

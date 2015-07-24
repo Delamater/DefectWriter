@@ -9,3 +9,9 @@ F:\X3\WorkingFolder\DefectWriter\DefectWriter\DefectWriter\bin\DefectWriter.pdb
 F:\X3\WorkingFolder\DefectWriter\DefectWriter\DefectWriter\obj\Debug\DefectWriter.csprojResolveAssemblyReference.cache
 F:\X3\WorkingFolder\DefectWriter\DefectWriter\DefectWriter\obj\Debug\DefectWriter.dll
 F:\X3\WorkingFolder\DefectWriter\DefectWriter\DefectWriter\obj\Debug\DefectWriter.pdb
+F:\X3\WorkingFolder\GitHub\DefectWriter\DefectWriter\DefectWriter\obj\Debug\DefectWriter.dll
+F:\X3\WorkingFolder\GitHub\DefectWriter\DefectWriter\DefectWriter\obj\Debug\DefectWriter.pdb
+F:\X3\WorkingFolder\GitHub\DefectWriter\DefectWriter\DefectWriter\bin\DefectWriter.dll.config
+F:\X3\WorkingFolder\GitHub\DefectWriter\DefectWriter\DefectWriter\bin\DefectWriter.dll
+F:\X3\WorkingFolder\GitHub\DefectWriter\DefectWriter\DefectWriter\bin\DefectWriter.pdb
+F:\X3\WorkingFolder\GitHub\DefectWriter\DefectWriter\DefectWriter\obj\Debug\DefectWriter.csprojResolveAssemblyReference.cache
