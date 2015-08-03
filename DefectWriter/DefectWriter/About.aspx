@@ -8,6 +8,5 @@
         Defect Writer 1.0</h2>
     <p>
         Author: Bob Delamater</p>
-<p>
-        This tool is designed to help you create defects in a timely manner.</p>
+<p>This tool is designed to help you create defects</p>
 </asp:Content>

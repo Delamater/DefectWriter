@@ -15,7 +15,7 @@ namespace DefectWriter
             string mailServer = "relay.mailinternal.com";
 
             SmtpClient client = new SmtpClient(mailServer);
-            MailAddress from = new MailAddress("bob.delamater@sage.com");
+            MailAddress from = new MailAddress("X3support.na@sage.com");
             MailAddress to = new MailAddress(sendTo);
             MailMessage message = new MailMessage(from, to);
             message.Body = body;

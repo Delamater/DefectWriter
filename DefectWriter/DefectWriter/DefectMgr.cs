@@ -20,6 +20,7 @@ namespace DefectWriter
         private string _criticalHighReason = "";
         private string _stepsToDupe = "";
         private string _expectedResults = "";
+        private string _customerExpectations = "";
         private string _customerCompanyName = "";
         private string _partnerCompanyName = "";
         private string _dbVersion = "";
@@ -29,6 +30,7 @@ namespace DefectWriter
         private string _typeOfRequest = "";
         private string _frequency = "";
         private bool _canDuplicate = false;
+        private string _notDuplicableReason = "";
         private string _workaround = "";
         private bool _isWorkaroundAcceptable = false;
         private string _WorkaroundNotAcceptableReason = "";
@@ -36,6 +38,7 @@ namespace DefectWriter
         private bool _isCustomized = false;
         private bool _preventsKeyFunction = false;
         //private bool _no3rdPartyMods = false;
+        private string _3rdPartyModsDesc = "";
         private bool _canReproduceInUnmodifiedCode = false;
         private bool _NoWrokaroundOrWorkaroundIsNotAcceptable = false;
         private bool _isEnhancementRequest = false;
@@ -84,6 +87,12 @@ namespace DefectWriter
         {
             get { return _expectedResults; }
             set { _expectedResults = value; }
+        }
+
+        public string CustomerExpectations
+        {
+            get { return _customerExpectations; }
+            set { _customerExpectations = value; }
         }
         
         public string CustomerCompanyName
@@ -135,6 +144,12 @@ namespace DefectWriter
             set { _canDuplicate = value; }
         }
 
+        public string NotDuplicableReason
+        {
+            get { return _notDuplicableReason; }
+            set { _notDuplicableReason = value; }
+        }
+
         public string Workaround
         {
             get { return _workaround; }
@@ -163,6 +178,12 @@ namespace DefectWriter
         {
             get { return _isCustomized; }
             set { _isCustomized = value; }
+        }
+
+        public string ThirdPartyModsDesc
+        {
+            get { return _3rdPartyModsDesc; }
+            set { _3rdPartyModsDesc = value; }
         }
 
         public bool PreventsKeyFunction
@@ -206,6 +227,7 @@ namespace DefectWriter
             string strCriticalHighReason,
             string strDefectStepsToDupe, 
             string strDefectExpectedResults,
+            string strCustomerExpectations,
             string strDefectCustomerCompanyName, 
             string strDefectPartnerCompanyName,
             string strDefectDbType, 
@@ -214,12 +236,14 @@ namespace DefectWriter
             string strDefectTypeOfRequest,
             string strDefectFrequency,
             bool blnDefectCanDuplicate,
+            string strNotDuplicableReason,
             bool blnDefectIsWorkaroundAcceptable,
             string strWorkaroundNotAcceptableReason,
             string strDefectWorkaround,
             string strDefectLocationOfResource,
             bool blnDefectPreventsKeyFunction,
             bool blnNo3rdPartyMods,
+            string str3rdPartyModsDesc,
             bool blnDefectCanReproduceInUnmodifiedCode,
             bool blnDefectNoWorkaroundOrWorkaroundIsNotAcceptable,
             bool blnDefectIsEnhancementRequest, 
@@ -234,6 +258,7 @@ namespace DefectWriter
             this.ReasonForCriticalOrHigh = strCriticalHighReason;
             this.StepsToDuplicate = strDefectStepsToDupe;
             this.ExpectedResults = strDefectExpectedResults;
+            this.CustomerExpectations = strCustomerExpectations;
             this.CustomerCompanyName = strDefectCustomerCompanyName;
             this.PartnerCompanyName = strDefectPartnerCompanyName;
             this.DbType = strDefectDbType;
@@ -242,12 +267,14 @@ namespace DefectWriter
             this.TypeOfRequest = strDefectTypeOfRequest;
             this.Frequency = strDefectFrequency;
             this.CanDuplicate = blnDefectCanDuplicate;
+            this.NotDuplicableReason = strNotDuplicableReason;
             this.IsWorkaroundAcceptable = blnDefectIsWorkaroundAcceptable;
             this.WorkaroundNotAcceptableReason = strWorkaroundNotAcceptableReason;
             this.Workaround = strDefectWorkaround;
             this.LocationOfResource = strDefectLocationOfResource;
             this.PreventsKeyFunction = blnDefectPreventsKeyFunction;
             this.No3rdPartyMods = blnNo3rdPartyMods;
+            this.ThirdPartyModsDesc = str3rdPartyModsDesc;
             this.CanReproduceInUnmodifiedCode = blnDefectCanReproduceInUnmodifiedCode;
             this.NoWorkaroundOrWorkaroundIsUnacceptable = blnDefectNoWorkaroundOrWorkaroundIsNotAcceptable;
             this.IsEnhancementRequest = blnDefectIsEnhancementRequest;
@@ -257,17 +284,25 @@ namespace DefectWriter
             AppendLine("Major Version: ", this.MajorVersion);
             AppendLine("Minor Version: ", this.MinorVersion);
             AppendLine("Priority: ", this.Priority);
+            AppendLine("Reason For Critical Or High:", this.ReasonForCriticalOrHigh);
             AppendLine("Steps to Duplicate:", this.StepsToDuplicate);
             AppendLine("Expected Results:", this.ExpectedResults);
+            AppendLine("Customer Expectations: ", this.CustomerExpectations);
             AppendLine("Customer Company Name:", this.CustomerCompanyName);
             AppendLine("Partner Company Name:", this.PartnerCompanyName);
             AppendLine("Database Type:", this.DbType);
             AppendLine("Database Version", this.DbVersion);
-            AppendLine("Reason For Critical Or High:", this.ReasonForCriticalOrHigh);
             AppendLine("Type of Request", this.TypeOfRequest);
             AppendLine("Frequency: ", this.Frequency);
-            AppendLine("Can duplicate?:", this.CanDuplicate.ToString());
-            AppendLine("Is Workaround Acceptable?:", this.IsWorkaroundAcceptable.ToString());
+            AppendLine("Can duplicate?:", (this.CanDuplicate) ? constants.kYes : constants.kNo);
+
+            if (this.CanDuplicate == false)
+            {
+                AppendLine("Not Duplicable Reason", this.NotDuplicableReason);
+            }
+
+            AppendLine("Is Workaround Acceptable?:", (this.IsWorkaroundAcceptable) ? constants.kYes : constants.kNo);
+
             AppendLine("Workaround: ", this.Workaround);
             
             if (!string.IsNullOrEmpty(this.WorkaroundNotAcceptableReason))
@@ -276,16 +311,24 @@ namespace DefectWriter
             }
             else
             {
-                AppendLine("Workaround Not Acceptable Reason:", "N/A");
+                AppendLine("Workaround Not Acceptable Reason:", constants.kNotApplicable);
             }
 
             AppendLine("Location of Resource:", this.LocationOfResource);
             AppendLine("Priority Checklist", "__________________________________");
-            AppendLine("Prevents Key Function:", this.PreventsKeyFunction.ToString());
-            AppendLine("No Third Party Modifications In This Area?:", this.No3rdPartyMods.ToString());
-            AppendLine("Can Reproduce In Unmodified Code?:", this.CanReproduceInUnmodifiedCode.ToString());
-            AppendLine("No Workaround or Workaround is Not Acceptable?:", this.NoWorkaroundOrWorkaroundIsUnacceptable.ToString());
-            AppendLine("Is Enhancement Request?:", this.IsEnhancementRequest.ToString());
+            AppendLine("Prevents Key Function:", (this.PreventsKeyFunction) ? constants.kYes : constants.kNo);
+            AppendLine("No Third Party Modifications In This Area?:", (this.No3rdPartyMods) ? constants.kYes : constants.kNo);
+            if (!string.IsNullOrEmpty(this.ThirdPartyModsDesc))
+            {
+                AppendLine("Third Party Mods Description:", this.ThirdPartyModsDesc);
+            }
+            else
+            {
+                AppendLine("Third Party mods Desc:", constants.kNotApplicable);
+            }
+            AppendLine("Can Reproduce In Unmodified Code?:", (this.CanReproduceInUnmodifiedCode) ? constants.kYes : constants.kNo);
+            AppendLine("No Workaround or Workaround is Not Acceptable?:", (this.NoWorkaroundOrWorkaroundIsUnacceptable) ? constants.kYes : constants.kNo);
+            AppendLine("Is Enhancement Request?:", (this.IsEnhancementRequest) ? constants.kYes : constants.kNo);
 
             return output.ToString();
 

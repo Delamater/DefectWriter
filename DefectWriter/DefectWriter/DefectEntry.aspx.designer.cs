@@ -202,13 +202,13 @@ namespace DefectWriter {
         protected global::System.Web.UI.WebControls.TextBox txtCriticalHighReason;
         
         /// <summary>
-        /// cfvPriorityValidation control.
+        /// rfvCriticalOrHighReason control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator cfvPriorityValidation;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCriticalOrHighReason;
         
         /// <summary>
         /// Label3 control.
@@ -272,6 +272,24 @@ namespace DefectWriter {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtExpectedResults;
+        
+        /// <summary>
+        /// Label32 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label32;
+        
+        /// <summary>
+        /// txtCustomerExpectations control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCustomerExpectations;
         
         /// <summary>
         /// Label5 control.
@@ -382,15 +400,6 @@ namespace DefectWriter {
         protected global::System.Web.UI.WebControls.DropDownList ddlFrequency;
         
         /// <summary>
-        /// chkIsDuplicable control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkIsDuplicable;
-        
-        /// <summary>
         /// Label11 control.
         /// </summary>
         /// <remarks>
@@ -434,6 +443,33 @@ namespace DefectWriter {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvWhyIsWorkaroundNotAcceptable;
+        
+        /// <summary>
+        /// chkIsDuplicable control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkIsDuplicable;
+        
+        /// <summary>
+        /// txtNotDuplicableReason control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNotDuplicableReason;
+        
+        /// <summary>
+        /// rfvWhyDidYouNotDuplicateInHouse control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvWhyDidYouNotDuplicateInHouse;
         
         /// <summary>
         /// Label12 control.
@@ -488,6 +524,24 @@ namespace DefectWriter {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkNo3rdPartyMods;
+        
+        /// <summary>
+        /// txt3rdPartyModsDesc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt3rdPartyModsDesc;
+        
+        /// <summary>
+        /// rfv3rdPartyReason control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv3rdPartyReason;
         
         /// <summary>
         /// chkReproducibleOnUnModifiedCode control.

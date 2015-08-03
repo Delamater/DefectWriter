@@ -3,19 +3,35 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using System.Web.Security;
 using System.Web.UI.WebControls;
+using System.DirectoryServices.AccountManagement;
 
 namespace DefectWriter
 {
     public partial class DefectEntry3 : System.Web.UI.Page
     {
+        //MembershipUser u;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            Page.MaintainScrollPositionOnPostBack = true;            
-            if (Page.IsPostBack)
+            try
+            {
+                //u = Membership.GetUser(User.Identity.Name);
+
+                if (!IsPostBack)
+                {
+                    if (string.IsNullOrEmpty(txtemailAddress.Text))
+                    {
+                        //txtemailAddress.Text = u.Email;
+                    }
+                }
+            }
+            catch( Exception ex)
             {
                 
             }
+            Page.MaintainScrollPositionOnPostBack = true;            
         }
 
         protected void btnBuildDefect_Click(object sender, EventArgs e)
@@ -31,6 +47,11 @@ namespace DefectWriter
             {
                 string myOutput = "";
 
+                if (ddlPriority.SelectedValue == "1" || ddlPriority.SelectedValue == "2")
+                {
+                    txtCriticalHighReason.Text = constants.kNotApplicable;
+                }
+
                 myOutput = myDefect.GetOutput(txtSummary.Text,
                     ddlMajorVersion.Text,
                     txtMinorVersion.Text,
@@ -38,6 +59,7 @@ namespace DefectWriter
                     txtCriticalHighReason.Text,
                     txtStepsToDuplicate.Text,
                     txtExpectedResults.Text,
+                    txtCustomerExpectations.Text,
                     txtCustomerCompanyName.Text,
                     txtPartnerCompanyName.Text,
                     ddlDatabaseType.Text,
@@ -46,12 +68,14 @@ namespace DefectWriter
                     ddlTypeOfRequest.Text,
                     ddlFrequency.Text,
                     chkIsDuplicable.Checked,
+                    txtNotDuplicableReason.Text,
                     chkIsWorkaroundAcceptable.Checked,
                     txtWorkaroundNotAcceptableReason.Text,
                     txtWorkaround.Text,
                     txtLocationOfResource.Text,
                     chkPreventsUseOfKeyFunction.Checked,
                     chkNo3rdPartyMods.Checked,
+                    txt3rdPartyModsDesc.Text,
                     chkReproducibleOnUnModifiedCode.Checked,
                     chkNoWorkaroundOrWorkaroundUnacceptable.Checked,
                     chkIsEnhancementRequest.Checked,
@@ -80,20 +104,12 @@ namespace DefectWriter
 
         protected void ddlPriority_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            txtCriticalHighReason.Enabled = IsPriorityCriticalOrHigh();
+            txtCriticalHighReason.Visible = IsPriorityCriticalOrHigh();
+            rfvCriticalOrHighReason.Enabled = IsPriorityCriticalOrHigh();
         }
 
-        protected void cfvPriorityValidation_ServerValidate(object source, ServerValidateEventArgs args)
-        {
-            if (IsPriorityMediumOrHigh() == true)
-            {
-                // Args are valid if txtReasonForCriticalOrHigh is not blank
-                args.IsValid = !string.IsNullOrEmpty(txtCriticalHighReason.Text.Trim());
-
-            }
-        }
-
-        private Boolean IsPriorityMediumOrHigh()
+        private Boolean IsPriorityCriticalOrHigh()
         {
             int intPriorityValue = 0;
             intPriorityValue = Convert.ToInt16(ddlPriority.SelectedValue);
@@ -120,6 +136,28 @@ namespace DefectWriter
             
         }
 
-        
+        protected void chkNo3rdPartyMods_CheckedChanged(object sender, EventArgs e)
+        {
+            txt3rdPartyModsDesc.Text = "";
+            txt3rdPartyModsDesc.Visible = !chkNo3rdPartyMods.Checked;
+            rfv3rdPartyReason.Enabled = !chkNo3rdPartyMods.Checked;
+        }
+
+        protected void ddlMajorVersion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ddlMajorVersion.SelectedValue == "X3 cloud")
+            {
+                txtMinorVersion.Text = constants.kNotApplicable;
+            }
+        }
+
+        protected void chkIsDuplicable_CheckedChanged(object sender, EventArgs e)
+        {
+            txtNotDuplicableReason.Text = "";
+            txtNotDuplicableReason.Visible = !chkIsDuplicable.Checked;
+            txtNotDuplicableReason.Enabled = !chkIsDuplicable.Checked;
+            rfvWhyDidYouNotDuplicateInHouse.Enabled = !chkIsDuplicable.Checked;
+            Page.SetFocus(chkIsDuplicable);
+        }
     }
 }

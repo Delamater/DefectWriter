@@ -82,6 +82,12 @@ namespace DefectWriter
             txtStepsToDuplicate.Text = kStepsToDupeTT;
         }
 
+        protected void ddlDatabaseType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+
+        }
+
 
     }
 }
