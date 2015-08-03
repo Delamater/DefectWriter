@@ -145,9 +145,14 @@ namespace DefectWriter
 
         protected void ddlMajorVersion_SelectedIndexChanged(object sender, EventArgs e)
         {
+
             if (ddlMajorVersion.SelectedValue == "X3 cloud")
             {
                 txtMinorVersion.Text = constants.kNotApplicable;
+            }
+            else
+            {
+                txtMinorVersion.Text = string.Empty;
             }
         }
 

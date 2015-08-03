@@ -72,7 +72,7 @@
                 <asp:Label ID="Label28" runat="server" Text="Major Version"></asp:Label>
             </td>
             <td class="auto-style1">
-                <asp:DropDownList ID="ddlMajorVersion" runat="server" OnSelectedIndexChanged="ddlMajorVersion_SelectedIndexChanged">
+                <asp:DropDownList ID="ddlMajorVersion" runat="server" OnSelectedIndexChanged="ddlMajorVersion_SelectedIndexChanged" AutoPostBack="True">
                     <asp:ListItem>v1.4</asp:ListItem>
                     <asp:ListItem>v1.3</asp:ListItem>
                     <asp:ListItem>v5</asp:ListItem>
