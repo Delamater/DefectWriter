@@ -58,6 +58,7 @@ namespace DefectWriter
                     ddlPriority.SelectedItem.Text,
                     txtCriticalHighReason.Text,
                     txtStepsToDuplicate.Text,
+                    txtAdditionalInformation.Text,
                     txtExpectedResults.Text,
                     txtCustomerExpectations.Text,
                     txtCustomerCompanyName.Text,
@@ -70,7 +71,8 @@ namespace DefectWriter
                     chkIsDuplicable.Checked,
                     txtNotDuplicableReason.Text,
                     chkIsWorkaroundAcceptable.Checked,
-                    txtWorkaroundNotAcceptableReason.Text,
+                    txtWorkaroundNotAcceptableReason.Text, 
+                    chkHasWorkAround.Checked,
                     txtWorkaround.Text,
                     txtLocationOfResource.Text,
                     chkPreventsUseOfKeyFunction.Checked,
@@ -132,15 +134,13 @@ namespace DefectWriter
             txtWorkaroundNotAcceptableReason.Visible = !chkIsWorkaroundAcceptable.Checked;
             rfvWhyIsWorkaroundNotAcceptable.Enabled = !chkIsWorkaroundAcceptable.Checked;
             Page.SetFocus(chkIsWorkaroundAcceptable);
-
-            
         }
 
         protected void chkNo3rdPartyMods_CheckedChanged(object sender, EventArgs e)
         {
             txt3rdPartyModsDesc.Text = "";
-            txt3rdPartyModsDesc.Visible = !chkNo3rdPartyMods.Checked;
-            rfv3rdPartyReason.Enabled = !chkNo3rdPartyMods.Checked;
+            txt3rdPartyModsDesc.Visible = chkNo3rdPartyMods.Checked;
+            rfv3rdPartyReason.Enabled = chkNo3rdPartyMods.Checked;
         }
 
         protected void ddlMajorVersion_SelectedIndexChanged(object sender, EventArgs e)
@@ -163,6 +163,13 @@ namespace DefectWriter
             txtNotDuplicableReason.Enabled = !chkIsDuplicable.Checked;
             rfvWhyDidYouNotDuplicateInHouse.Enabled = !chkIsDuplicable.Checked;
             Page.SetFocus(chkIsDuplicable);
+        }
+
+        protected void chkWorkAround_CheckedChanged(object sender, EventArgs e)
+        {
+            txtWorkaround.Visible = chkHasWorkAround.Checked;
+            chkIsWorkaroundAcceptable.Visible = chkHasWorkAround.Checked;
+            rfvHasWorkAround.Enabled = chkHasWorkAround.Checked;
         }
     }
 }

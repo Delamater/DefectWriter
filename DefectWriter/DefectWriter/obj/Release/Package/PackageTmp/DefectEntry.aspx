@@ -5,8 +5,12 @@
         .auto-style1 {
             height: 21px;
         }
-        .auto-style2 {
-            height: 24px;
+        .auto-style3 {
+            width: 27px;
+        }
+        .auto-style4 {
+            height: 21px;
+            width: 27px;
         }
     </style>
 </asp:Content>
@@ -19,7 +23,7 @@
             <td>
                 <asp:ValidationSummary ID="vsValidationSummary" runat="server" ForeColor="Red" ShowMessageBox="True" />
             </td>
-            <td>
+            <td class="auto-style3">
                 &nbsp;</td>
         </tr>
         <tr>
@@ -29,7 +33,7 @@
             <td>
     <asp:TextBox ID="txtemailAddress" runat="server" Width="400px"></asp:TextBox>
             </td>
-            <td>
+            <td class="auto-style3">
                 <asp:RequiredFieldValidator ID="rfvEmailAddress" runat="server" ControlToValidate="txtemailAddress" ErrorMessage="An email address is required" ForeColor="Red" SetFocusOnError="True">***</asp:RequiredFieldValidator>
                 <br />
                 <asp:RegularExpressionValidator ID="EmailAddrValid" runat="server" 
@@ -45,7 +49,7 @@
             <td>
                 <asp:TextBox ID="txtCaseNumber" runat="server" Width="150px"></asp:TextBox>
             </td>
-            <td>
+            <td class="auto-style3">
         <asp:RequiredFieldValidator ID="rfvCaseNumber" runat="server" 
             ControlToValidate="txtCaseNumber" Display="Dynamic" ErrorMessage="Case Number Is Required" 
             Font-Bold="False" ForeColor="Red" SetFocusOnError="True">***</asp:RequiredFieldValidator>
@@ -63,7 +67,7 @@
             <td class="auto-style1">
     <asp:TextBox ID="txtSummary" runat="server" Width="100%" MaxLength="66"></asp:TextBox>
             </td>
-            <td class="auto-style1">
+            <td class="auto-style4">
                 <asp:RequiredFieldValidator ID="rfvSummary" runat="server" ControlToValidate="txtSummary" ErrorMessage="Summary is required" ForeColor="Red" SetFocusOnError="True">***</asp:RequiredFieldValidator>
             </td>
         </tr>
@@ -83,7 +87,7 @@
                     <asp:ListItem>X3 cloud</asp:ListItem>
                 </asp:DropDownList>
             </td>
-            <td class="auto-style1">
+            <td class="auto-style4">
                 &nbsp;</td>
         </tr>
         <tr>
@@ -93,94 +97,9 @@
             <td class="auto-style1">
                 <asp:TextBox ID="txtMinorVersion" runat="server"></asp:TextBox>
             </td>
-            <td class="auto-style1">
+            <td class="auto-style4">
                 <asp:RequiredFieldValidator ID="rfvMinorVersion" runat="server" ControlToValidate="txtMinorVersion" ErrorMessage="Minor version is required" ForeColor="Red" SetFocusOnError="True">***</asp:RequiredFieldValidator>
             </td>
-        </tr>
-        <tr>
-            <td class="auto-style1">
-                <asp:Label ID="Label30" runat="server" Text="Priority"></asp:Label>
-            </td>
-            <td class="auto-style1">
-                <asp:DropDownList ID="ddlPriority" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlPriority_SelectedIndexChanged">
-                    <asp:ListItem Value="1">Low</asp:ListItem>
-                    <asp:ListItem Selected="True" Value="2">Medium</asp:ListItem>
-                    <asp:ListItem Value="3">High</asp:ListItem>
-                    <asp:ListItem Value="4">Critical</asp:ListItem>
-                </asp:DropDownList>
-            </td>
-            <td class="auto-style1">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="auto-style1">
-                <asp:Label ID="Label31" runat="server" Text="Reason"></asp:Label>
-            </td>
-            <td class="auto-style1">
-                <asp:TextBox ID="txtCriticalHighReason" runat="server" Rows="10" TextMode="MultiLine" Width="100%" Visible="False"></asp:TextBox>
-            </td>
-            <td class="auto-style1">
-                <br />
-                <br />
-                <asp:RequiredFieldValidator ID="rfvCriticalOrHighReason" runat="server" ControlToValidate="txtCriticalHighReason" ErrorMessage="State a reason why this is critical / high" Enabled="False">***</asp:RequiredFieldValidator>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <asp:Label ID="Label3" runat="server" Text="Steps To Duplicate (or question):"></asp:Label>
-            </td>
-            <td>
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td colspan="2">       
-                <asp:TextBox ID="txtStepsToDuplicate" runat="server" Rows="20" TextMode="MultiLine" Width="100%"></asp:TextBox>
-            </td>
-            <td>       
-                <asp:RequiredFieldValidator ID="rvfStepsToDuplicate" runat="server" ControlToValidate="txtStepsToDuplicate" ErrorMessage="Steps to duplicate (or question) are required" ForeColor="Red">***</asp:RequiredFieldValidator>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <asp:Label ID="Label27" runat="server" Text="Additional Information:"></asp:Label>
-            </td>
-            <td>
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td colspan="2">
-        <asp:TextBox ID="txtAdditionalInformation" runat="server" Height="50px" TextMode="MultiLine" Width="100%"></asp:TextBox>
-            </td>
-            <td>
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <asp:Label ID="Label4" runat="server" Text="Expected Results:"></asp:Label>
-            </td>
-            <td>
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td colspan="2">
-        <asp:TextBox ID="txtExpectedResults" runat="server" Height="50px" TextMode="MultiLine" Width="100%"></asp:TextBox>
-            </td>
-            <td>
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <asp:Label ID="Label32" runat="server" Text="Customer Expectations:"></asp:Label>
-            </td>
-            <td>
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td colspan="2">
-        <asp:TextBox ID="txtCustomerExpectations" runat="server" Height="50px" TextMode="MultiLine" Width="100%" ToolTip="Does the customer expect a hot fix on the current patch, a fix in the next available patch, or the next major version?"></asp:TextBox>
-            </td>
-            <td>
-                &nbsp;</td>
         </tr>
         <tr>
             <td>
@@ -189,7 +108,7 @@
             <td>
     <asp:TextBox ID="txtCustomerCompanyName" runat="server" Width="100%"></asp:TextBox>
             </td>
-            <td>
+            <td class="auto-style3">
                 &nbsp;</td>
         </tr>
         <tr>
@@ -199,7 +118,7 @@
             <td>
     <asp:TextBox ID="txtPartnerCompanyName" runat="server" Width="100%"></asp:TextBox>
             </td>
-            <td>
+            <td class="auto-style3">
                 &nbsp;</td>
         </tr>
         <tr>
@@ -214,7 +133,7 @@
         <asp:ListItem>N/A</asp:ListItem>
     </asp:DropDownList>
             </td>
-            <td>
+            <td class="auto-style3">
                 &nbsp;</td>
         </tr>
         <tr>
@@ -235,7 +154,7 @@
         <asp:ListItem>Oracle</asp:ListItem>
     </asp:DropDownList>
             </td>
-            <td>
+            <td class="auto-style3">
                 &nbsp;</td>
         </tr>
         <tr>
@@ -249,7 +168,7 @@
         <asp:ListItem>Question / Information Needed</asp:ListItem>
     </asp:DropDownList>
             </td>
-            <td>
+            <td class="auto-style3">
                 &nbsp;</td>
         </tr>
         <tr>
@@ -269,32 +188,112 @@
         <asp:ListItem>N/A</asp:ListItem>
     </asp:DropDownList>
             </td>
-            <td>
+            <td class="auto-style3">
                 &nbsp;</td>
         </tr>
         <tr>
-            <td>
-                <asp:Label ID="Label11" runat="server" Text="Workaround:"></asp:Label>
+            <td class="auto-style1">
+                <asp:Label ID="Label30" runat="server" Text="Priority"></asp:Label>
             </td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td class="auto-style1">
+                <asp:DropDownList ID="ddlPriority" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlPriority_SelectedIndexChanged">
+                    <asp:ListItem Value="1">Low</asp:ListItem>
+                    <asp:ListItem Selected="True" Value="2">Medium</asp:ListItem>
+                    <asp:ListItem Value="3">High</asp:ListItem>
+                    <asp:ListItem Value="4">Critical</asp:ListItem>
+                </asp:DropDownList>
+            </td>
+            <td class="auto-style4">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="auto-style1">
+                <asp:Label ID="Label31" runat="server" Text="Reason"></asp:Label>
+            </td>
+            <td class="auto-style1">
+                <asp:TextBox ID="txtCriticalHighReason" runat="server" Rows="10" TextMode="MultiLine" Width="100%" Visible="False"></asp:TextBox>
+            </td>
+            <td class="auto-style4">
+                <br />
+                <br />
+                <asp:RequiredFieldValidator ID="rfvCriticalOrHighReason" runat="server" ControlToValidate="txtCriticalHighReason" ErrorMessage="State a reason why this is critical / high" Enabled="False">***</asp:RequiredFieldValidator>
+            </td>
         </tr>
         <tr>
             <td colspan="2">
-    <asp:TextBox ID="txtWorkaround" runat="server" Height="100px" 
-        TextMode="MultiLine" Width="100%"></asp:TextBox>
+                <asp:Label ID="Label3" runat="server" Text="Steps To Duplicate (or question):"></asp:Label>
             </td>
-            <td>
+            <td class="auto-style3">
                 &nbsp;</td>
         </tr>
         <tr>
-            <td colspan="2" class="auto-style2">
-    <asp:CheckBox ID="chkIsWorkaroundAcceptable" runat="server" 
-        Text="Workaround Acceptable (If not, why not?)" Checked="True" AutoPostBack="True" OnCheckedChanged="chkIsWorkaroundAcceptable_CheckedChanged" />
+            <td colspan="2">       
+                <asp:TextBox ID="txtStepsToDuplicate" runat="server" Rows="20" TextMode="MultiLine" Width="100%"></asp:TextBox>
+            </td>
+            <td class="auto-style3">       
+                <asp:RequiredFieldValidator ID="rvfStepsToDuplicate" runat="server" ControlToValidate="txtStepsToDuplicate" ErrorMessage="Steps to duplicate (or question) are required" ForeColor="Red">***</asp:RequiredFieldValidator>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <asp:Label ID="Label27" runat="server" Text="Additional Information:"></asp:Label>
+            </td>
+            <td class="auto-style3">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+        <asp:TextBox ID="txtAdditionalInformation" runat="server" Height="50px" TextMode="MultiLine" Width="100%"></asp:TextBox>
+            </td>
+            <td class="auto-style3">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <asp:Label ID="Label4" runat="server" Text="Expected Results:"></asp:Label>
+            </td>
+            <td class="auto-style3">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+        <asp:TextBox ID="txtExpectedResults" runat="server" Height="50px" TextMode="MultiLine" Width="100%"></asp:TextBox>
+            </td>
+            <td class="auto-style3">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <asp:Label ID="Label32" runat="server" Text="Customer Expectations:"></asp:Label>
+            </td>
+            <td class="auto-style3">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+        <asp:TextBox ID="txtCustomerExpectations" runat="server" Height="50px" TextMode="MultiLine" Width="100%" ToolTip="Does the customer expect a hot fix on the current patch, a fix in the next available patch, or the next major version?"></asp:TextBox>
+            </td>
+            <td class="auto-style3">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <asp:CheckBox ID="chkHasWorkAround" runat="server" AutoPostBack="True" OnCheckedChanged="chkWorkAround_CheckedChanged" Text="Has Workaround" />
                 <br />
+    <asp:TextBox ID="txtWorkaround" runat="server" Height="100px" 
+        TextMode="MultiLine" Width="100%" Visible="False"></asp:TextBox>
+            </td>
+            <td class="auto-style3">
+                <asp:RequiredFieldValidator ID="rfvHasWorkAround" runat="server" ControlToValidate="txtWorkaround" ErrorMessage="Please describe the workaround" ForeColor="Red" SetFocusOnError="True">***</asp:RequiredFieldValidator>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+    <asp:CheckBox ID="chkIsWorkaroundAcceptable" runat="server" 
+        Text="Workaround Acceptable (If not, why not?)" Checked="True" AutoPostBack="True" OnCheckedChanged="chkIsWorkaroundAcceptable_CheckedChanged" Visible="False" />
                 <asp:TextBox ID="txtWorkaroundNotAcceptableReason" runat="server" Rows="5" TextMode="MultiLine" Width="100%" Visible="False"></asp:TextBox>
             </td>
-            <td class="auto-style2">
+            <td class="auto-style3">
                 <asp:RequiredFieldValidator ID="rfvWhyIsWorkaroundNotAcceptable" runat="server" ControlToValidate="txtWorkaroundNotAcceptableReason" ErrorMessage="State a reason why the workaround is not acceptable" ForeColor="Red" Enabled="False">***</asp:RequiredFieldValidator>
                 </td>
         </tr>
@@ -305,7 +304,7 @@
     <asp:TextBox ID="txtNotDuplicableReason" runat="server" Height="100px" 
         TextMode="MultiLine" Width="100%" Enabled="False" Visible="False"></asp:TextBox>
             </td>
-            <td>
+            <td class="auto-style3">
                 <asp:RequiredFieldValidator ID="rfvWhyDidYouNotDuplicateInHouse" runat="server" ControlToValidate="txtNotDuplicableReason" ErrorMessage="State a reason why you weren't able to duplicate in house" ForeColor="Red" Enabled="False">***</asp:RequiredFieldValidator>
                 </td>
         </tr>
@@ -313,7 +312,7 @@
             <td colspan="2">
                 <asp:Label ID="Label12" runat="server" Text="Location where duplicated:"></asp:Label>
             </td>
-            <td>
+            <td class="auto-style3">
                 &nbsp;</td>
         </tr>
         <tr>
@@ -321,7 +320,7 @@
     <asp:TextBox ID="txtLocationOfResource" runat="server" Height="50px" 
         TextMode="MultiLine" Width="100%"></asp:TextBox>
             </td>
-            <td>
+            <td class="auto-style3">
                 <asp:RequiredFieldValidator ID="rfvLocationOfDuplication" runat="server" ControlToValidate="txtLocationOfResource" ErrorMessage="Location where you duplicated it is required" ForeColor="Red" SetFocusOnError="True">***</asp:RequiredFieldValidator>
             </td>
         </tr>
@@ -331,19 +330,19 @@
             </td>
             <td class="auto-style1">
     <asp:CheckBox ID="chkPreventsUseOfKeyFunction" runat="server" 
-        Text="Prevents Use Of Key Function" />
+        Text="Prevents Use Of Key Function?" />
             </td>
-            <td class="auto-style1">&nbsp;</td>
+            <td class="auto-style4">&nbsp;</td>
         </tr>
         <tr>
             <td class="auto-style1">
     <asp:CheckBox ID="chkNo3rdPartyMods" runat="server" 
-        Text="No 3rd Party Modifications" AutoPostBack="True" OnCheckedChanged="chkNo3rdPartyMods_CheckedChanged" />
+        Text="3rd Party Modifications" AutoPostBack="True" OnCheckedChanged="chkNo3rdPartyMods_CheckedChanged" />
                 <br />
-                <asp:TextBox ID="txt3rdPartyModsDesc" runat="server" Rows="4" TextMode="MultiLine" Width="100%"></asp:TextBox>
+                <asp:TextBox ID="txt3rdPartyModsDesc" runat="server" Rows="4" TextMode="MultiLine" Width="100%" Visible="False"></asp:TextBox>
                 </td>
-            <td class="auto-style1">
-                <asp:RequiredFieldValidator ID="rfv3rdPartyReason" runat="server" ControlToValidate="txt3rdPartyModsDesc" ErrorMessage="Describe the 3rd party modifications" ForeColor="Red" SetFocusOnError="True">***</asp:RequiredFieldValidator>
+            <td class="auto-style4">
+                <asp:RequiredFieldValidator ID="rfv3rdPartyReason" runat="server" ControlToValidate="txt3rdPartyModsDesc" ErrorMessage="Describe the 3rd party modifications" ForeColor="Red" SetFocusOnError="True" Enabled="False">***</asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
@@ -351,21 +350,21 @@
     <asp:CheckBox ID="chkReproducibleOnUnModifiedCode" runat="server" 
         Text="Reproducible In Unmodified Code" />
             </td>
-            <td class="auto-style1"></td>
+            <td class="auto-style4"></td>
         </tr>
         <tr>
             <td class="auto-style1">
     <asp:CheckBox ID="chkNoWorkaroundOrWorkaroundUnacceptable" runat="server" 
         Text="No Workaround Or Workaround Is Not Acceptable" />
             </td>
-            <td class="auto-style1">&nbsp;</td>
+            <td class="auto-style4">&nbsp;</td>
         </tr>
         <tr>
             <td class="auto-style1">
     <asp:CheckBox ID="chkIsEnhancementRequest" runat="server" 
-        Text="Is Enhancement Request" />
+        Text="Enhancement Request" />
             </td>
-            <td class="auto-style1">&nbsp;</td>
+            <td class="auto-style4">&nbsp;</td>
         </tr>
         <tr>
             <td>
@@ -373,13 +372,13 @@
         Text="Build Defect" />
             </td>
             <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td class="auto-style3">&nbsp;</td>
         </tr>
         <tr>
             <td colspan="2">
                 <asp:TextBox ID="txtOutput" runat="server" Rows="10" TextMode="MultiLine" Width="100%" ReadOnly="True"></asp:TextBox>
             </td>
-            <td>
+            <td class="auto-style3">
                 &nbsp;</td>
         </tr>
         </table>
