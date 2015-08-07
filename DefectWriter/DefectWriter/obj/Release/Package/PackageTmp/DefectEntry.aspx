@@ -6,12 +6,12 @@
             height: 21px;
         }
         .auto-style3 {
-            width: 27px;
-        }
-        .auto-style4 {
-            height: 21px;
-            width: 27px;
-        }
+        width: 27px;
+    }
+    .auto-style4 {
+        height: 21px;
+        width: 27px;
+    }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -284,7 +284,7 @@
         TextMode="MultiLine" Width="100%" Visible="False"></asp:TextBox>
             </td>
             <td class="auto-style3">
-                <asp:RequiredFieldValidator ID="rfvHasWorkAround" runat="server" ControlToValidate="txtWorkaround" ErrorMessage="Please describe the workaround" ForeColor="Red" SetFocusOnError="True">***</asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="rfvHasWorkAround" runat="server" ControlToValidate="txtWorkaround" Enabled="False" ErrorMessage="Please describe the workaround" ForeColor="Red" SetFocusOnError="True">***</asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
@@ -310,7 +310,7 @@
         </tr>
         <tr>
             <td colspan="2">
-                <asp:Label ID="Label12" runat="server" Text="Location where duplicated:"></asp:Label>
+                <asp:Label ID="Label12" runat="server" Text="Location where duplicated: (Name of vApp, IP Address)"></asp:Label>
             </td>
             <td class="auto-style3">
                 &nbsp;</td>
@@ -325,7 +325,7 @@
             </td>
         </tr>
         <tr>
-            <td rowspan="5">
+            <td rowspan="4">
                 <asp:Label ID="Label13" runat="server" Text="Priority Checklist:"></asp:Label>
             </td>
             <td class="auto-style1">
@@ -354,17 +354,10 @@
         </tr>
         <tr>
             <td class="auto-style1">
-    <asp:CheckBox ID="chkNoWorkaroundOrWorkaroundUnacceptable" runat="server" 
-        Text="No Workaround Or Workaround Is Not Acceptable" />
-            </td>
-            <td class="auto-style4">&nbsp;</td>
-        </tr>
-        <tr>
-            <td class="auto-style1">
     <asp:CheckBox ID="chkIsEnhancementRequest" runat="server" 
         Text="Enhancement Request" />
             </td>
-            <td class="auto-style4">&nbsp;</td>
+            <td class="auto-style4"></td>
         </tr>
         <tr>
             <td>

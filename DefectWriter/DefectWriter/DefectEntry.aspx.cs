@@ -51,7 +51,7 @@ namespace DefectWriter
                 {
                     txtCriticalHighReason.Text = constants.kNotApplicable;
                 }
-
+                
                 myOutput = myDefect.GetOutput(txtSummary.Text,
                     ddlMajorVersion.Text,
                     txtMinorVersion.Text,
@@ -79,7 +79,6 @@ namespace DefectWriter
                     chkNo3rdPartyMods.Checked,
                     txt3rdPartyModsDesc.Text,
                     chkReproducibleOnUnModifiedCode.Checked,
-                    chkNoWorkaroundOrWorkaroundUnacceptable.Checked,
                     chkIsEnhancementRequest.Checked,
                     Convert.ToDouble(txtCaseNumber.Text));
 

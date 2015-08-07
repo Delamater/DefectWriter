@@ -23,6 +23,7 @@ namespace DefectWriter
             message.Subject = subject;
             message.SubjectEncoding = System.Text.Encoding.UTF8;
             client.Send(message);
+            
 
         }
     }
