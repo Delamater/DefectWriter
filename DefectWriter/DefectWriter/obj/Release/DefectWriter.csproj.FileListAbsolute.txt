@@ -1,0 +1,6 @@
+F:\X3\WorkingFolder\GitHub\DefectWriter\DefectWriter\DefectWriter\bin\DefectWriter.dll.config
+F:\X3\WorkingFolder\GitHub\DefectWriter\DefectWriter\DefectWriter\bin\DefectWriter.dll
+F:\X3\WorkingFolder\GitHub\DefectWriter\DefectWriter\DefectWriter\bin\DefectWriter.pdb
+F:\X3\WorkingFolder\GitHub\DefectWriter\DefectWriter\DefectWriter\obj\Release\DefectWriter.dll
+F:\X3\WorkingFolder\GitHub\DefectWriter\DefectWriter\DefectWriter\obj\Release\DefectWriter.pdb
+F:\X3\WorkingFolder\GitHub\DefectWriter\DefectWriter\DefectWriter\obj\Release\DefectWriter.csprojResolveAssemblyReference.cache
