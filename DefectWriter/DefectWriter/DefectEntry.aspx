@@ -73,6 +73,16 @@
         </tr>
         <tr>
             <td class="auto-style1">
+                <asp:Label ID="Label33" runat="server" Text="Function"></asp:Label>
+            </td>
+            <td class="auto-style1">
+                <asp:TextBox ID="txtFunction" runat="server" style="text-transform:uppercase;" OnTextChanged="txtFunction_TextChanged"></asp:TextBox>
+            </td>
+            <td class="auto-style4">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="auto-style1">
                 <asp:Label ID="Label28" runat="server" Text="Major Version"></asp:Label>
             </td>
             <td class="auto-style1">
@@ -264,7 +274,7 @@
         </tr>
         <tr>
             <td colspan="2">
-                <asp:Label ID="Label32" runat="server" Text="Customer Expectations:"></asp:Label>
+                <asp:Label ID="Label32" runat="server" Text="Customer Expectations for how the case should be handled (hot fix, next patch, etc.):"></asp:Label>
             </td>
             <td class="auto-style3">
                 &nbsp;</td>
@@ -300,6 +310,8 @@
         <tr>
             <td colspan="2">
     <asp:CheckBox ID="chkIsDuplicable" runat="server" Text="Duplicate In House?" AutoPostBack="True" Checked="True" OnCheckedChanged="chkIsDuplicable_CheckedChanged" />
+                <br />
+                <asp:Label ID="lblReasonWhyCouldNotDuplicate" runat="server" Text="State a reason why you weren't able to duplicate in house" Visible="False"></asp:Label>
                 <br />
     <asp:TextBox ID="txtNotDuplicableReason" runat="server" Height="100px" 
         TextMode="MultiLine" Width="100%" Enabled="False" Visible="False"></asp:TextBox>

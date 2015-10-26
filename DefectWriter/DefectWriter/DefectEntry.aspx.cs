@@ -53,6 +53,7 @@ namespace DefectWriter
                 }
                 
                 myOutput = myDefect.GetOutput(txtSummary.Text,
+                    txtFunction.Text,
                     ddlMajorVersion.Text,
                     txtMinorVersion.Text,
                     ddlPriority.SelectedItem.Text,
@@ -94,8 +95,6 @@ namespace DefectWriter
                     smtpMgr.SendEmail(sendToEmail, "Defect Writer: " + txtSummary.Text + "- Case Number: " + caseNumber, myOutput, "");
 
                 }
-
-
             }
             catch (Exception ex)
             {
@@ -160,6 +159,7 @@ namespace DefectWriter
             txtNotDuplicableReason.Text = "";
             txtNotDuplicableReason.Visible = !chkIsDuplicable.Checked;
             txtNotDuplicableReason.Enabled = !chkIsDuplicable.Checked;
+            lblReasonWhyCouldNotDuplicate.Visible = !chkIsDuplicable.Checked;
             rfvWhyDidYouNotDuplicateInHouse.Enabled = !chkIsDuplicable.Checked;
             Page.SetFocus(chkIsDuplicable);
         }
@@ -169,6 +169,14 @@ namespace DefectWriter
             txtWorkaround.Visible = chkHasWorkAround.Checked;
             chkIsWorkaroundAcceptable.Visible = chkHasWorkAround.Checked;
             rfvHasWorkAround.Enabled = chkHasWorkAround.Checked;
+        }
+
+        protected void txtFunction_TextChanged(object sender, EventArgs e)
+        {
+            //A stylesheet property will also force this condition. However, if someone
+            //uses a cookie value the textbox can be in uppercase, but the value in lowercase.
+            //For this reason, we'll force upper in the code behind as well.
+            txtFunction.Text = txtFunction.Text.ToUpper();
         }
     }
 }

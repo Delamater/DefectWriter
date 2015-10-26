@@ -14,6 +14,7 @@ namespace DefectWriter
         StringBuilder output = new StringBuilder();
 
         private string _summary = "";
+        private string _function = "";
         private string _majorVersion = "";
         private string _minorVersion = "";
         private string _priority = "";
@@ -52,6 +53,11 @@ namespace DefectWriter
             set { _summary = value; }
         }
 
+        public string Function
+        {
+            get { return _function; }
+            set { _function = value; }
+        }
         public string MajorVersion
         {
             get { return _majorVersion; }
@@ -225,6 +231,7 @@ namespace DefectWriter
         #region Methods
         public string GetOutput(
             string strDefectSummary, 
+            string strFunction,
             string strMajorVersion,
             string strMinorVersion, 
             string strPriority,
@@ -257,6 +264,7 @@ namespace DefectWriter
         {
             
             this.Summary = strDefectSummary;
+            this.Function = strFunction;
             this.MajorVersion = strMajorVersion;
             this.MinorVersion= strMinorVersion;
             this.Priority = strPriority;
@@ -288,6 +296,7 @@ namespace DefectWriter
             this.CaseNumber = dblDefectCaseNumber;
 
             AppendLine("Summary For Case #: " + this.CaseNumber.ToString() + " ", this.Summary);
+            AppendLine("Function: ", this.Function.ToUpper());
             AppendLine("Major Version: ", this.MajorVersion);
             AppendLine("Minor Version: ", this.MinorVersion);
             AppendLine("Customer Company Name: ", this.CustomerCompanyName);
@@ -310,16 +319,28 @@ namespace DefectWriter
             }
 
             AppendLine("Has Workaround: ", (this.HasWorkaround) ? constants.kYes : constants.kNo);
-            AppendLine("Workaround: ", this.Workaround);
-            AppendLine("Is Workaround Acceptable?: ", (this.IsWorkaroundAcceptable) ? constants.kYes : constants.kNo);
 
-            if (!string.IsNullOrEmpty(this.WorkaroundNotAcceptableReason))
+            if (this.HasWorkaround)
             {
-                AppendLine("Workaround Not Acceptable Reason: ", this.WorkaroundNotAcceptableReason);
-            }
-            else
-            {
-                AppendLine("Workaround Not Acceptable Reason: ", constants.kNotApplicable);
+                //If there is a workaround provide the workaround and whether or not it is acceptable to the customer
+                AppendLine("Workaround: ", this.Workaround);
+                AppendLine("Is Workaround Acceptable?: ", (this.IsWorkaroundAcceptable) ? constants.kYes : constants.kNo);
+                
+
+                //Only show why a workaround is not acceptable (or is), if we have a workaround. 
+                //If no workaround is present, this will not print out
+                
+                //if (!string.IsNullOrEmpty(this.WorkaroundNotAcceptableReason))
+                if (!this.IsWorkaroundAcceptable)
+                {
+                    AppendLine("Workaround Not Acceptable Reason: ", this.WorkaroundNotAcceptableReason);
+                }
+                else
+                {
+                    //Show no value if the workaround is 
+                    //AppendLine("Workaround Not Acceptable Reason: ", constants.kNotApplicable);
+                }
+
             }
 
             AppendLine("Location of Resource: ", this.LocationOfResource);

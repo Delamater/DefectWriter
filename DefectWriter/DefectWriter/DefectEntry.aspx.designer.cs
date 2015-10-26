@@ -121,6 +121,24 @@ namespace DefectWriter {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvSummary;
         
         /// <summary>
+        /// Label33 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label33;
+        
+        /// <summary>
+        /// txtFunction control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtFunction;
+        
+        /// <summary>
         /// Label28 control.
         /// </summary>
         /// <remarks>
@@ -461,6 +479,15 @@ namespace DefectWriter {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkIsDuplicable;
+        
+        /// <summary>
+        /// lblReasonWhyCouldNotDuplicate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblReasonWhyCouldNotDuplicate;
         
         /// <summary>
         /// txtNotDuplicableReason control.
