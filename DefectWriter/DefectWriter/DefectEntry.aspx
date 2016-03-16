@@ -92,7 +92,8 @@
                     <asp:ListItem>v5</asp:ListItem>
                     <asp:ListItem Selected="True">v6</asp:ListItem>
                     <asp:ListItem>v7</asp:ListItem>
-                    <asp:ListItem>Product Update 8</asp:ListItem>
+                    <asp:ListItem>PU8</asp:ListItem>
+                    <asp:ListItem>PU9</asp:ListItem>
                     <asp:ListItem>Other</asp:ListItem>
                     <asp:ListItem>X3 cloud</asp:ListItem>
                 </asp:DropDownList>
