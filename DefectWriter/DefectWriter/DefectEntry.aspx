@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="DefectEntry.aspx.cs" Inherits="DefectWriter.DefectEntry3" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="DefectEntry.aspx.cs" Inherits="DefectWriter.DefectEntry3" ValidateRequest="false" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <style type="text/css">
@@ -13,6 +13,11 @@
         width: 27px;
     }
     </style>
+
+  <%--<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">--%>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <script src="../ckeditor/ckeditor.js"></script>
@@ -32,7 +37,22 @@
             </td>
             <td>
     <asp:TextBox ID="txtemailAddress" runat="server" Width="400px"></asp:TextBox>
-            </td>
+                <input id="btnEmailAddressHelp" type="button" value="?" data-toggle="modal" data-target="#mdlEmailAddress" /></td>
+            <!-- The Modal -->
+            <div id="mdlEmailAddress" class="modal">
+              <!-- Modal content -->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h2>Email Address Help</h2>
+                </div>
+                <div class="modal-body">
+                    <p>Enter your own <b>email address</b> to receive a copy of output generated</p>
+                </div>
+                <div class="modal-footer">
+                  <h3>Email Address Help</h3>
+                </div>
+              </div>
+            </div>
             <td class="auto-style3">
                 <asp:RequiredFieldValidator ID="rfvEmailAddress" runat="server" ControlToValidate="txtemailAddress" ErrorMessage="An email address is required" ForeColor="Red" SetFocusOnError="True">***</asp:RequiredFieldValidator>
                 <br />
@@ -48,7 +68,21 @@
             </td>
             <td>
                 <asp:TextBox ID="txtCaseNumber" runat="server" Width="150px"></asp:TextBox>
-            </td>
+                <!-- The Modal -->
+                <div id="mdlCaseNumber" class="modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2>Case Number Help</h2>
+                        </div>
+                        <div class="modal-body">
+                            <p>The <b>case number</b> is the same number as the number within Fusion. Only one case number value should be provided.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <h3>Case Number Help</h3>
+                        </div>
+                    </div>
+                </div>
+                <input id="btnCaseNumber" type="button" value="?" data-toggle="modal" data-target="#mdlCaseNumber" /></td>
             <td class="auto-style3">
         <asp:RequiredFieldValidator ID="rfvCaseNumber" runat="server" 
             ControlToValidate="txtCaseNumber" Display="Dynamic" ErrorMessage="Case Number Is Required" 
@@ -65,8 +99,21 @@
                 <asp:Label ID="Label2" runat="server" Text="Summary:"></asp:Label>
             </td>
             <td class="auto-style1">
-    <asp:TextBox ID="txtSummary" runat="server" Width="100%" MaxLength="66"></asp:TextBox>
-            </td>
+    <asp:TextBox ID="txtSummary" runat="server" Width="95%" MaxLength="66"></asp:TextBox>
+                <div id="mdlSummary" class="modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2>Summary Help</h2>
+                        </div>
+                        <div class="modal-body">
+                        <p>The <b>summary</b> is limited to 66 characters, and is intended to be a short description of the problem, enough to remember this defect or question only</p>
+                        </div>
+                        <div class="modal-footer">
+                            <h3>Summary Help</h3>
+                        </div>
+                    </div>
+                </div>
+                <input id="btnSummary" type="button" value="?" data-toggle="modal" data-target="#mdlSummary" /></td>
             <td class="auto-style4">
                 <asp:RequiredFieldValidator ID="rfvSummary" runat="server" ControlToValidate="txtSummary" ErrorMessage="Summary is required" ForeColor="Red" SetFocusOnError="True">***</asp:RequiredFieldValidator>
             </td>
@@ -77,7 +124,20 @@
             </td>
             <td class="auto-style1">
                 <asp:TextBox ID="txtFunction" runat="server" style="text-transform:uppercase;" OnTextChanged="txtFunction_TextChanged"></asp:TextBox>
-            </td>
+                <div id="mdlFunctionHelp" class="modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2>Function Help</h2>
+                        </div>
+                        <div class="modal-body">
+                            <p>This is the <b>fuction code</b> for which your defect or question relates to. You can discover the function code by hovering your mouse over the link that starts your function within Sage X3.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <h3>Function Help</h3>
+                        </div>
+                    </div>
+                </div>
+                <input id="btnFunctionHelp" type="button" value="?" data-toggle="modal" data-target="#mdlFunctionHelp" /></td>
             <td class="auto-style4">
                 &nbsp;</td>
         </tr>
@@ -97,7 +157,20 @@
                     <asp:ListItem>Other</asp:ListItem>
                     <asp:ListItem>X3 cloud</asp:ListItem>
                 </asp:DropDownList>
-            </td>
+                <div id="mdlMajorVersionHelp" class="modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2>Major Version Help</h2>
+                        </div>
+                        <div class="modal-body">
+                            <p>This is the <b>major</b> version of Sage X3, specific to the customer or partner for which you are reporting the defect or enhancement. Only one value is possible as the customer is only implemented in on one system at a time. This is also the major version for which you are requesting a hot fix for, in said circumstance.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <h3>Major Version Help</h3>
+                        </div>
+                    </div>
+                </div>
+                <input id="btnMajorVersionHelp" type="button" value="?" data-toggle="modal" data-target="#mdlMajorVersionHelp" /></td>
             <td class="auto-style4">
                 &nbsp;</td>
         </tr>
@@ -107,7 +180,20 @@
             </td>
             <td class="auto-style1">
                 <asp:TextBox ID="txtMinorVersion" runat="server"></asp:TextBox>
-            </td>
+                <div id="mdlMinorVersionHelp" class="modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2>Minor Version Help</h2>
+                        </div>
+                        <div class="modal-body">
+                            <p>This is the <b>minor</b> version of Sage X3, specific to the customer or partner for which you are reporting the defect or enhancement. Only one value is possible as the customer is only implemented in on one system at a time. This is also the major version for which you are requesting a hot fix for, in said circumstance.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <h3>Minor Version Help</h3>
+                        </div>
+                    </div>
+                </div>
+                <input id="btnMinorVersionHelp" type="button" value="?" data-toggle="modal" data-target="#mdlMinorVersionHelp" /></td>
             <td class="auto-style4">
                 <asp:RequiredFieldValidator ID="rfvMinorVersion" runat="server" ControlToValidate="txtMinorVersion" ErrorMessage="Minor version is required" ForeColor="Red" SetFocusOnError="True">***</asp:RequiredFieldValidator>
             </td>
@@ -117,8 +203,21 @@
                 <asp:Label ID="Label5" runat="server" Text="Customer Company Name:"></asp:Label>
             </td>
             <td>
-    <asp:TextBox ID="txtCustomerCompanyName" runat="server" Width="100%"></asp:TextBox>
-            </td>
+    <asp:TextBox ID="txtCustomerCompanyName" runat="server" Width="95%"></asp:TextBox>
+                <div id="mdlCustomerCompanyHelp" class="modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2>Customer Company Name Help</h2>
+                        </div>
+                        <div class="modal-body">
+                            <p>Enter the <b>customer</b> name, not the <b>partner</b> name. This is the customer for which this case is tied to. Do not skip this value.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <h3>Customer Company Name Help</h3>
+                        </div>
+                    </div>
+                </div>
+                <input id="btnCustomerCompanyNameHelp" type="button" value="?" data-toggle="modal" data-target="#mdlCustomerCompanyHelp" /></td>
             <td class="auto-style3">
                 &nbsp;</td>
         </tr>
@@ -127,8 +226,21 @@
                 <asp:Label ID="Label6" runat="server" Text="Partner Company Name:"></asp:Label>
             </td>
             <td>
-    <asp:TextBox ID="txtPartnerCompanyName" runat="server" Width="100%"></asp:TextBox>
-            </td>
+    <asp:TextBox ID="txtPartnerCompanyName" runat="server" Width="95%"></asp:TextBox>
+                <div id="mdlPartnerCompanyName" class="modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2>Partner Company Name Help</h2>
+                        </div>
+                        <div class="modal-body">
+                            <p>Enter the <b>partner</b> name tied to this case</b> Do not skip this value.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <h3>Partner Company Name Help</h3>
+                        </div>
+                    </div>
+                </div>
+                <input id="btnPartnerCompanyNameHelp" type="button" value="?" data-toggle="modal" data-target="#mdlPartnerCompanyName"/></td>
             <td class="auto-style3">
                 &nbsp;</td>
         </tr>
@@ -233,7 +345,35 @@
         <tr>
             <td colspan="2">
                 <asp:Label ID="Label3" runat="server" Text="Steps To Duplicate (or question):"></asp:Label>
-            </td>
+            &nbsp;
+            <!-- Trigger/Open The Modal -->
+            <input id="btnStepsToDupeHelp" type="button" value="?" data-toggle="modal" data-target="#mdlStepsToDupe"/>
+
+            <!-- The Modal -->
+            <div id="mdlStepsToDupe" class="modal">
+
+              <!-- Modal content -->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h2>Steps To Duplicate Help</h2>
+                </div>
+                <div class="modal-body">
+                  <p><b>Steps to duplicate should contain a topic sentence</b>, and <b>simplified, enumerated steps</b>, example as follows:</p>
+                  <p>"SQL Server Error" when executing a requester within GESALQ</p>
+                  <p>1. Launch GESALQ</p>
+                  <p>2. Create a new requester</p>
+                  <p>3. Use the following syntax
+                      "SELECT * FROM DEMO.ATABLES"
+                  </p>
+                  <p>4. Save the requester with the activation checkbox checked and validate</p>
+                  <p>5. Run the requester </p>
+                  <p>6. Receive the error specified</p>
+                </div>
+                <div class="modal-footer">
+                  <h3>Steps To Duplicate Help</h3>
+                </div>
+              </div>
+            </div>              
             <td class="auto-style3">
                 &nbsp;</td>
         </tr>
