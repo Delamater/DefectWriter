@@ -69,6 +69,8 @@
     <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
+    <Content Include="ChangeLog.aspx" />
+    <Content Include="ChangeLog.txt" />
     <Content Include="ckeditor\adapters\jquery.js" />
     <Content Include="ckeditor\build-config.js" />
     <Content Include="ckeditor\ckeditor.js" />
@@ -500,6 +502,13 @@
     </Compile>
     <Compile Include="Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChangeLog.aspx.cs">
+      <DependentUpon>ChangeLog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChangeLog.aspx.designer.cs">
+      <DependentUpon>ChangeLog.aspx</DependentUpon>
     </Compile>
     <Compile Include="constants.cs" />
     <Compile Include="Default.aspx.cs">

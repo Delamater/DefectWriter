@@ -255,7 +255,20 @@
         <asp:ListItem>Unknown</asp:ListItem>
         <asp:ListItem>N/A</asp:ListItem>
     </asp:DropDownList>
-            </td>
+                <div id="mdlDatabaseType" class="modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2>Database Type Help</h2>
+                        </div>
+                        <div class="modal-body">
+                            <p>Select the <b>database type</b> that the customer is using. <b>Do not</b> skip thi step.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <h3>Database Type Help</h3>
+                        </div>
+                    </div>
+                </div>
+                <input id="btnDatabaseTypeHelp" type="button" value="?" data-toggle="modal" data-target="#mdlDatabaseType"/></td>
             <td class="auto-style3">
                 &nbsp;</td>
         </tr>
@@ -276,7 +289,20 @@
         <asp:ListItem>N/A</asp:ListItem>
         <asp:ListItem>Oracle</asp:ListItem>
     </asp:DropDownList>
-            </td>
+                <div id="mdlSqlVersionHelp" class="modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2>Database Version Help</h2>
+                        </div>
+                        <div class="modal-body">
+                            <p>Choose the <b>version</b> of the database used. If the <b>version</b> is not relevant to the case select <b>N/A</b>, but be certain this is the case before doing so.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <h3>Database Version Help</h3>
+                        </div>
+                    </div>
+                </div>
+                <input id="btnSqlVersionHelp" type="button" value="?" data-toggle="modal" data-target="#mdlSqlVersionHelp" /></td>
             <td class="auto-style3">
                 &nbsp;</td>
         </tr>
@@ -290,7 +316,20 @@
         <asp:ListItem>Enhancement</asp:ListItem>
         <asp:ListItem>Question / Information Needed</asp:ListItem>
     </asp:DropDownList>
-            </td>
+                <div id="mdlTypeOfRequest" class="modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2>Type of Request Help</h2>
+                        </div>
+                        <div class="modal-body">
+                            <p>Define the type of request for this submission. Valid values are <b>Defect</b>, <b>Enhancement</b>, or <b>Question</b>.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <h3>Type of Request Help</h3>
+                        </div>
+                    </div>
+                </div> 
+                <input id="btnTypeOfRequest" type="button" value="?" data-toggle="modal" data-target="#mdlTypeOfRequest" /></td>
             <td class="auto-style3">
                 &nbsp;</td>
         </tr>
@@ -301,16 +340,25 @@
             <td>
     <asp:DropDownList ID="ddlFrequency" runat="server" Width="300px">
         <asp:ListItem>100%</asp:ListItem>
-        <asp:ListItem>75%</asp:ListItem>
-        <asp:ListItem>50%</asp:ListItem>
-        <asp:ListItem>25%</asp:ListItem>
         <asp:ListItem>Weekly</asp:ListItem>
         <asp:ListItem>Monthly</asp:ListItem>
-        <asp:ListItem>Intermittent</asp:ListItem>
-        <asp:ListItem>Unknown</asp:ListItem>
+        <asp:ListItem>Intermittent (See additional info)</asp:ListItem>
         <asp:ListItem>N/A</asp:ListItem>
     </asp:DropDownList>
-            </td>
+                <div id="mdlFrequency" class="modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2>Frequency of Occurrence Help</h2>
+                        </div>
+                        <div class="modal-body">
+                            <p>Define <b>how frequently</b> this problem occurs, if applicable. </p>
+                        </div>
+                        <div class="modal-footer">
+                            <h3>Frequency of Occurrence Help</h3>
+                        </div>
+                    </div>
+                </div>
+                <input id="btnFrequencyHelp" type="button" value="?" data-toggle="modal" data-target="#mdlFrequency" /></td>
             <td class="auto-style3">
                 &nbsp;</td>
         </tr>
@@ -325,7 +373,22 @@
                     <asp:ListItem Value="3">High</asp:ListItem>
                     <asp:ListItem Value="4">Critical</asp:ListItem>
                 </asp:DropDownList>
-            </td>
+
+                <div id="mdlPriorityHelp" class="modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2>Priority Help</h2>
+                        </div>
+                        <div class="modal-body">
+                            <p>Follow the guidelines for priority defined on the sharepoint guide for submitting a LISA entry.</p>
+                            <p><b>Note: Hot fixes are reserved for High and Critical Entries Only</b></p>
+                        </div>
+                        <div class="modal-footer">
+                            <h3>Priorty Help</h3>
+                        </div>
+                    </div>
+                </div>
+                <input id="btnPriorityHelp" type="button" value="?" data-toggle="modal" data-target="#mdlPriorityHelp" /></td>
             <td class="auto-style4">
                 &nbsp;</td>
         </tr>
@@ -388,7 +451,21 @@
         <tr>
             <td colspan="2">
                 <asp:Label ID="Label27" runat="server" Text="Additional Information:"></asp:Label>
-            </td>
+                <div id="mdlAdditionalInfoHelp" class="modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2>Additional Infroamtion Help</h2>
+                        </div>
+                        <div class="modal-body">
+                            <p>The Additional Information section provides a space to augment the steps to duplicate, or provide details / clarity around the defect or question. </p>
+                            <p><b>Note: The Additional Information section allows you to keep your steps to duplicate short, and provide any more details that are required to complete the entry.</b></p>
+                        </div>
+                        <div class="modal-footer">
+                            <h3>Additional Information Help</h3>
+                        </div>
+                    </div>
+                </div>
+                <input id="btnAdditionalInfoHelp" type="button" value="?" data-toggle="modal" data-target="#mdlAdditionalInfoHelp" /></td>
             <td class="auto-style3">
                 &nbsp;</td>
         </tr>
@@ -402,7 +479,21 @@
         <tr>
             <td colspan="2">
                 <asp:Label ID="Label4" runat="server" Text="Expected Results:"></asp:Label>
-            </td>
+                <div id="mdlExpectedResults" class="modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2>Expected Results Help</h2>"
+                        </div>
+                        <div class="modal-body">
+                            <p>Define the <b>expected results</b>, what <b>should occur</b> in a normal situation. </p>
+                            <p><b>Note: "An error should not occur" isn't a valid customer expectation, be specific about what you want to happen instead.</b></p>
+                        </div>
+                        <div class="modal-footer">
+                            <h3>Expected Results Help</h3>
+                        </div>
+                    </div>
+                </div>
+                <input id="btnExpectedResultsHelp" type="button" value="?"  data-toggle="modal" data-target="#mdlExpectedResults"/></td>
             <td class="auto-style3">
                 &nbsp;</td>
         </tr>
@@ -416,7 +507,21 @@
         <tr>
             <td colspan="2">
                 <asp:Label ID="Label32" runat="server" Text="Customer Expectations for how the case should be handled (hot fix, next patch, etc.):"></asp:Label>
-            </td>
+                <div id="mdlCustomerExpectations" class="modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2>Customer Expectations Help</h2>
+                        </div>
+                        <div class="modal-body">
+                            <p>If this is a defect, then this is what the customer is expecting in terms of a fix, allbeit a hot fix or next patch. If this is an enhancement request then it should be entered on the Sage Ideation site. If this is a question, then this should define when the question needs to be answered by. </p>
+                            <p><b>Note: Define what will happen if the expectations aren't met.</b> Example: A hot fix is requested for a delivery date in two weeks, what will happen to the project if that doesn't happen? What are the implications to Sage, the partner and the customer?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <h3>Customer Expectations Help</h3>
+                        </div>
+                    </div>
+                </div>
+                <input id="btnCustomerExpectationsHelp" type="button" value="?" data-toggle="modal" data-target="#mdlCustomerExpectations" /></td>
             <td class="auto-style3">
                 &nbsp;</td>
         </tr>
@@ -430,7 +535,22 @@
         <tr>
             <td colspan="2">
                 <asp:CheckBox ID="chkHasWorkAround" runat="server" AutoPostBack="True" OnCheckedChanged="chkWorkAround_CheckedChanged" Text="Has Workaround" />
-                <br />
+                <div id="mdlHasWorkaround" class="modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2>Has Workaround Help</h2>
+                        </div>
+                        <div class="modal-body">
+                            <p>Check this if there is a workaround. If this is no workaround, leave this unchecked. <b>Do not</b> leave this unchecked if there is a workaround. <b>Do not</b> state a workaround in the additional information section or anywhere else without checking this box.</p>                            
+                            <p>If there is a workaround a new checkbox will pop up asking if the workaround is acceptable from the customer's point of view. Check this box if it is acceptable, uncheck it if the customer finds the workaround is unacceptable.</p>
+                            <p>If the workaround is not acceptable, define why <b>from the customer's perspective</b> the workaround is not acceptable. Do not explain from Sage's perspective why the workaround is not acceptable, retrieve the reason from the customer. You may be required to follow up with the customer more than one time to fully understand why it isn't acceptable.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <h3>Has Workaround Help</h3>
+                        </div>
+                    </div>
+                </div>
+                <input id="btnHasWorkaroundHelp" type="button" value="?" data-toggle="modal" data-target="#mdlHasWorkaround"/><br />
     <asp:TextBox ID="txtWorkaround" runat="server" Height="100px" 
         TextMode="MultiLine" Width="100%" Visible="False"></asp:TextBox>
             </td>
@@ -451,6 +571,20 @@
         <tr>
             <td colspan="2">
     <asp:CheckBox ID="chkIsDuplicable" runat="server" Text="Duplicate In House?" AutoPostBack="True" Checked="True" OnCheckedChanged="chkIsDuplicable_CheckedChanged" />
+                <div id="mdlIsDuplcableHelp" class="modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2>Is Duplicable Help</h2>
+                        </div>
+                        <div class="modal-body">
+                            <p>Check the box if you can duplicate. If you cannot duplicate <b>state the reason why you cannot</b>.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <h3>Is Duplicable Help</h3>
+                        </div>
+                    </div>
+                </div>
+                <input id="btnIsDuplicableHelp" type="button" value="?" data-toggle="modal" data-target="#mdlIsDuplcableHelp"/>
                 <br />
                 <asp:Label ID="lblReasonWhyCouldNotDuplicate" runat="server" Text="State a reason why you weren't able to duplicate in house" Visible="False"></asp:Label>
                 <br />
@@ -464,7 +598,21 @@
         <tr>
             <td colspan="2">
                 <asp:Label ID="Label12" runat="server" Text="Location where duplicated: (Name of vApp, IP Address)"></asp:Label>
-            </td>
+                <div id="mdlLocationWhereDuped" class="modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2>Location Where Duplicated Help</h2>
+                        </div>
+                        <div class="modal-body">
+                            <p>Define the machine within Virtual Cloud Director where you duplicated this issue. In the situation where complex defects are submitted, and especially when the problem requires set up, the mentor team will leverage this machine to save time when reproducing an issue.</p>
+                            <p><b>Note: You must make a valid attempt to reproduce the issue on your machine before submitting a defect</b>.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <h3>Location Where Duplicated Help</h3>
+                        </div>
+                    </div>
+                </div>
+                <input id="btnLocationWhereDupedHelp" type="button" value="?" data-toggle="modal" data-target="#mdlLocationWhereDuped" /></td>
             <td class="auto-style3">
                 &nbsp;</td>
         </tr>

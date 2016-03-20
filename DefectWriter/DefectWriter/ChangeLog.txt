@@ -1,0 +1,4 @@
+03/20/2016	- Altered frequency drop down to remove 75%, 50%, 25%, and unknown. 
+			- Added change log
+03/18/2016	- Added change log
+03/17/2016	- Add PU8 and PU9 to the drop down box
