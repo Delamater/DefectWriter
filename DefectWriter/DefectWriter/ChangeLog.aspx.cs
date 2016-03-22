@@ -16,7 +16,10 @@ namespace DefectWriter
             try
             {
                 string path = Server.MapPath("ChangeLog.txt");
+                
                 txtChangeLog.Text = File.ReadAllText(path);
+                
+                
             }
             catch (Exception ex)
             {

@@ -394,7 +394,7 @@
         </tr>
         <tr>
             <td class="auto-style1">
-                <asp:Label ID="Label31" runat="server" Text="Reason"></asp:Label>
+                <asp:Label ID="lblReason" runat="server" Text="Reason" Visible="False"></asp:Label>
             </td>
             <td class="auto-style1">
                 <asp:TextBox ID="txtCriticalHighReason" runat="server" Rows="10" TextMode="MultiLine" Width="100%" Visible="False"></asp:TextBox>

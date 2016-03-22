@@ -107,6 +107,7 @@ namespace DefectWriter
             txtCriticalHighReason.Enabled = IsPriorityCriticalOrHigh();
             txtCriticalHighReason.Visible = IsPriorityCriticalOrHigh();
             rfvCriticalOrHighReason.Enabled = IsPriorityCriticalOrHigh();
+            lblReason.Visible = IsPriorityCriticalOrHigh();
         }
 
         private Boolean IsPriorityCriticalOrHigh()

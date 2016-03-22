@@ -310,13 +310,13 @@ namespace DefectWriter {
         protected global::System.Web.UI.WebControls.DropDownList ddlPriority;
         
         /// <summary>
-        /// Label31 control.
+        /// lblReason control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label31;
+        protected global::System.Web.UI.WebControls.Label lblReason;
         
         /// <summary>
         /// txtCriticalHighReason control.
