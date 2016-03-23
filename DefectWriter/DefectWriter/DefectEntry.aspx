@@ -250,10 +250,10 @@
             </td>
             <td>
     <asp:DropDownList ID="ddlDatabaseType" runat="server" Width="200px">
-        <asp:ListItem Selected="True">SQL Server</asp:ListItem>
+        <asp:ListItem Selected="True">N/A</asp:ListItem>
+        <asp:ListItem>SQL Server</asp:ListItem>
         <asp:ListItem>Oracle</asp:ListItem>
         <asp:ListItem>Unknown</asp:ListItem>
-        <asp:ListItem>N/A</asp:ListItem>
     </asp:DropDownList>
                 <div id="mdlDatabaseType" class="modal">
                     <div class="modal-content">
@@ -278,15 +278,15 @@
             </td>
             <td>
     <asp:DropDownList ID="ddlSQLVersion" runat="server" Width="200px">
+        <asp:ListItem Selected="True">N/A</asp:ListItem>
         <asp:ListItem>SQL 2016</asp:ListItem>
         <asp:ListItem>SQL 2014</asp:ListItem>
         <asp:ListItem>SQL 2012</asp:ListItem>
-        <asp:ListItem Selected="True">SQL 2008 R2</asp:ListItem>
+        <asp:ListItem>SQL 2008 R2</asp:ListItem>
         <asp:ListItem>SQL 2008</asp:ListItem>
         <asp:ListItem>SQL 2005</asp:ListItem>
         <asp:ListItem>SQL 2000</asp:ListItem>
         <asp:ListItem>Unknown</asp:ListItem>
-        <asp:ListItem>N/A</asp:ListItem>
         <asp:ListItem>Oracle</asp:ListItem>
     </asp:DropDownList>
                 <div id="mdlSqlVersionHelp" class="modal">
