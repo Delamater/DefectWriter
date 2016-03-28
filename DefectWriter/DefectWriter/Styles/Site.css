@@ -355,6 +355,8 @@ div.accountInfo
     background-color: #759356;
     color: #000000;
     word-wrap:break-word;
+    font-weight:900;
+    
 }
 
 .modal-body {

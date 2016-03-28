@@ -75,7 +75,7 @@
                             <h2>Case Number Help</h2>
                         </div>
                         <div class="modal-body">
-                            <p>The <b>case number</b> is the same number as the number within Fusion. Only one case number value should be provided.</p>
+                            <p>Enter the 10-digit FUSION <b>case number</b>. Only one case number can be selected. Enter additional case numbers in the Additional information field, if applicable. The case number shold correlate to the case number for the Customer Company Name identifed below.</p>
                         </div>
                         <div class="modal-footer">
                             <h3>Case Number Help</h3>
@@ -96,20 +96,24 @@
         </tr>
         <tr>
             <td class="auto-style1">
-                <asp:Label ID="Label2" runat="server" Text="Summary:"></asp:Label>
+                <asp:Label ID="Label2" runat="server" Text="Short Description:"></asp:Label>
             </td>
             <td class="auto-style1">
     <asp:TextBox ID="txtSummary" runat="server" Width="95%" MaxLength="66"></asp:TextBox>
                 <div id="mdlSummary" class="modal">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h2>Summary Help</h2>
+                            <h2>Short Description Help</h2>
                         </div>
                         <div class="modal-body">
-                        <p>The <b>summary</b> is limited to 66 characters, and is intended to be a short description of the problem, enough to remember this defect or question only</p>
+                        <p>The <b>Short Description</b> is intended to be a brief summary of the problem, a memorable phrase someone would use to find this defect when searching. <i>When I do X... Y happens.</i></p>
+                        <p>&nbsp;</p>
+                        <h2><b>Example: </b></h2>Personalizing landing page causes carditem error
+                        <p>&nbsp;</p>
+                        <p>This field is limited to 66 characters and is the description entered into LISA</p>
                         </div>
                         <div class="modal-footer">
-                            <h3>Summary Help</h3>
+                            <h3>Short Description Help</h3>
                         </div>
                     </div>
                 </div>
@@ -130,7 +134,10 @@
                             <h2>Function Help</h2>
                         </div>
                         <div class="modal-body">
-                            <p>This is the <b>fuction code</b> for which your defect or question relates to. You can discover the function code by hovering your mouse over the link that starts your function within Sage X3.</p>
+                            <p>This is the Sage X3 <b>fuction code</b> for which your defect or question relates. You can discover the function code by hovering your mouse over the link that starts your function within Sage X3.</p>
+                            <p>&nbsp</p>
+                            <h2><b>Example: </b></h2>GESSOH
+                            <p>&nbsp</p>
                         </div>
                         <div class="modal-footer">
                             <h3>Function Help</h3>
@@ -163,7 +170,13 @@
                             <h2>Major Version Help</h2>
                         </div>
                         <div class="modal-body">
-                            <p>This is the <b>major</b> version of Sage X3, specific to the customer or partner for which you are reporting the defect or enhancement. Only one value is possible as the customer is only implemented in on one system at a time. This is also the major version for which you are requesting a hot fix for, in said circumstance.</p>
+                            <p>This is the Sage X3 <b>major version</b> release, specific to the customer or partner for which you are reporting the defect or question. Only one version can be selected. Enter additional versions you've tested in the Additional information field, if applicable. </p>
+                            <p>&nbsp;</p>
+                            <p><h2><b>Examples: </b></h2>
+                                <li>V6</li>
+                                <li>U9</li>
+                            </p>
+                            <p>&nbsp;</p>
                         </div>
                         <div class="modal-footer">
                             <h3>Major Version Help</h3>
@@ -172,24 +185,27 @@
                 </div>
                 <input id="btnMajorVersionHelp" type="button" value="?" data-toggle="modal" data-target="#mdlMajorVersionHelp" /></td>
             <td class="auto-style4">
-                &nbsp;</td>
+                </td>
         </tr>
         <tr>
             <td class="auto-style1">
-                <asp:Label ID="Label29" runat="server" Text="Minor Version (Patch Level)"></asp:Label>
+                <asp:Label ID="Label29" runat="server" Text="Patch Level"></asp:Label>
             </td>
             <td class="auto-style1">
                 <asp:TextBox ID="txtMinorVersion" runat="server"></asp:TextBox>
                 <div id="mdlMinorVersionHelp" class="modal">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h2>Minor Version Help</h2>
+                            <h2>Patch Level Help</h2>
                         </div>
                         <div class="modal-body">
-                            <p>This is the <b>minor</b> version of Sage X3, specific to the customer or partner for which you are reporting the defect or enhancement. Only one value is possible as the customer is only implemented in on one system at a time. This is also the major version for which you are requesting a hot fix for, in said circumstance.</p>
+                            <p>This is the Sage X3 <b>patch level</b> specific to the customer or partner for which you are reporting the defect or question. If a hot fix is requested, it will be for this version. Only one version can be selected. Enter additional versions you've tested in the Additional information field, if applicable.</p>
+                            <p>&nbsp</p>
+                            <p><h2><b>Example: </b></h2>P32</p>
+                            <p>&nbsp</p>
                         </div>
                         <div class="modal-footer">
-                            <h3>Minor Version Help</h3>
+                            <h3>Patch Level Help</h3>
                         </div>
                     </div>
                 </div>
@@ -210,7 +226,7 @@
                             <h2>Customer Company Name Help</h2>
                         </div>
                         <div class="modal-body">
-                            <p>Enter the <b>customer</b> name, not the <b>partner</b> name. This is the customer for which this case is tied to. Do not skip this value.</p>
+                            <p>Enter the <b>Customer</b> name, not the <b>Partner</b> name. This is the customer for which this case is tied. This field should correlate to the <b>End Customer</b> field in FUSION. If you don't know, <b>ASK</b> the partner or Professional Services Group. A blank value means this issue is not for any customer and the partner is reporting on their own behalf.</p>
                         </div>
                         <div class="modal-footer">
                             <h3>Customer Company Name Help</h3>
@@ -233,7 +249,15 @@
                             <h2>Partner Company Name Help</h2>
                         </div>
                         <div class="modal-body">
-                            <p>Enter the <b>partner</b> name tied to this case</b> Do not skip this value.</p>
+                            <p>Enter the <b>Partner</b> name tied to this case.</b> Enter the Sage department name if reported by a Sage internal reource.</p>
+                            <p>&nbsp</p>
+                            <p><h2><b>Example:</b></h2>
+                                <li>PSG</li>
+                                <li>Learning Services</li>
+                                <li>RKL</li>
+                            </p>
+                            <p>&nbsp</p>
+                            <p>This field should be only left blank if the customer reported the issue on their own.</p>
                         </div>
                         <div class="modal-footer">
                             <h3>Partner Company Name Help</h3>
@@ -261,7 +285,7 @@
                             <h2>Database Type Help</h2>
                         </div>
                         <div class="modal-body">
-                            <p>Select the <b>database type</b> that the customer is using. <b>Do not</b> skip thi step.</p>
+                            <p>Select the <b>database type</b> that the customer is using. If you don't know the database version, select unknown. If the database type is not applicable select <b>N/A</b> but be certain before doing so.</p>
                         </div>
                         <div class="modal-footer">
                             <h3>Database Type Help</h3>
@@ -295,7 +319,7 @@
                             <h2>Database Version Help</h2>
                         </div>
                         <div class="modal-body">
-                            <p>Choose the <b>version</b> of the database used. If the <b>version</b> is not relevant to the case select <b>N/A</b>, but be certain this is the case before doing so.</p>
+                            <p>Select the <b>version</b> of the database used. If the <b>version</b> is not relevant to the case select <b>N/A</b>, but be certain this is the case before doing so.</p>
                         </div>
                         <div class="modal-footer">
                             <h3>Database Version Help</h3>
@@ -322,7 +346,7 @@
                             <h2>Type of Request Help</h2>
                         </div>
                         <div class="modal-body">
-                            <p>Define the type of request for this submission. Valid values are <b>Defect</b>, <b>Enhancement</b>, or <b>Question</b>.</p>
+                            <p>Select the type of request for this submission. Valid values are <b>Defect</b>, and <b>Question</b>. If you require a fix (in a patch, a hot fix, or a future release), it is a <b>Defect</b>. A <b>Question</b> will only return an answer; changes to code will not occur in this situation. Both may <i>clear</i> require steps to duplicate. Please review your submission to ensure you are clear on what you are asking for.</p>
                         </div>
                         <div class="modal-footer">
                             <h3>Type of Request Help</h3>
@@ -351,7 +375,7 @@
                             <h2>Frequency of Occurrence Help</h2>
                         </div>
                         <div class="modal-body">
-                            <p>Define <b>how frequently</b> this problem occurs, if applicable. </p>
+                            <p>Define <b>how frequently</b> this problem occurs, if applicable. How often does it happen? Select the best option and augment in the additional information section as necessary. </p>
                         </div>
                         <div class="modal-footer">
                             <h3>Frequency of Occurrence Help</h3>
@@ -381,7 +405,9 @@
                         </div>
                         <div class="modal-body">
                             <p>Follow the guidelines for priority defined on the sharepoint guide for submitting a LISA entry.</p>
-                            <p><b>Note: Hot fixes are reserved for High and Critical Entries Only</b></p>
+                            <p><a href="https://goo.gl/4AaYZH" target="_blank">The LISA folder</a></p>
+                            <p>Selecting <b>High (Critical)</b> will expose the <b>Reason</b> text box. Enter the <b>Reason</b> this issue is considered high to the customer, including the business impact or pain. Define how often it happens on how many transactions during what period of time. Include the impact or ramifications to the company, whether or not auditors are onsite questioning data, or the system is down (or functional to a lesser degree) and why this issue may be blocking.</p>
+                            <p>Note: A selection of High will result in colleagues stopping everything to work on this issue.</p>
                         </div>
                         <div class="modal-footer">
                             <h3>Priorty Help</h3>
@@ -421,16 +447,21 @@
                   <h2>Steps To Duplicate Help</h2>
                 </div>
                 <div class="modal-body">
-                  <p><b>Steps to duplicate should contain a topic sentence</b>, and <b>simplified, enumerated steps</b>, example as follows:</p>
-                  <p>"SQL Server Error" when executing a requester within GESALQ</p>
-                  <p>1. Launch GESALQ</p>
-                  <p>2. Create a new requester</p>
-                  <p>3. Use the following syntax
-                      "SELECT * FROM DEMO.ATABLES"
-                  </p>
-                  <p>4. Save the requester with the activation checkbox checked and validate</p>
-                  <p>5. Run the requester </p>
-                  <p>6. Receive the error specified</p>
+                  <p>Steps to duplicate should contain <b>a topic sentence</b>, and <b>simplified, enumerated steps</b>.</p>
+                    
+                  <p><h2><b>Example:</b></h2></p>
+                  <p>"Cannot insert duplicate key row in object 'SEED.GACCENTRYD' with unique index 'GACCENTRYD_DAE2'. The duplicate key value is 4612." when running SVG import (DOSINTEG).</p>
+                  <ol style="padding-left:inherit">
+                    <li>Launch DOSINTEG</li>
+                        <ul>
+                            <li>Folder = DEMO </li>
+                            <li>Backup directory = SVG </li>
+                            <li>Tables to import = GACCENTRYD </li>
+                        </ul>
+                    <li>Press OK to execute </li>
+                    <li>Receive the error specified</li>
+                  </ol>
+                  <p>&nbsp</p>
                 </div>
                 <div class="modal-footer">
                   <h3>Steps To Duplicate Help</h3>
@@ -457,9 +488,19 @@
                             <h2>Additional Infroamtion Help</h2>
                         </div>
                         <div class="modal-body">
-                            <p>The Additional Information section provides a space to augment the steps to duplicate, or provide details / clarity around the defect or question. </p>
+                            <p>The Additional Information section provides a space to augment the steps to duplicate, or provide details / clarity around the defect or question or further troubleshooting you have done. </p>
                             <p><b>Note: The Additional Information section allows you to keep your steps to duplicate short, and provide any more details that are required to complete the entry.</b></p>
                         </div>
+                        <h2 style="text-indent:15px"><b>Examples</b></h2>
+                        <p>
+                            <ul>
+                                <li>I was able to duplicate on p30, 31 and 8.04</li>
+                                <li>This appears to be like LISA 12-34567</li>
+                                <li>I could not duplicate but saw on customer's folder. Have run out of ideas and resources.</li>
+                                <li>There are 3rd party modifications in this area, but I've ruled them out</li>
+                            </ul>
+                        </p>
+                        <p>&nbsp</p>
                         <div class="modal-footer">
                             <h3>Additional Information Help</h3>
                         </div>
@@ -482,10 +523,20 @@
                 <div id="mdlExpectedResults" class="modal">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h2>Expected Results Help</h2>"
+                            <h2>Expected Results Help</h2>
                         </div>
                         <div class="modal-body">
                             <p>Define the <b>expected results</b>, what <b>should occur</b> in a normal situation. </p>
+                            <h2><b>Examples</b></h2>
+                            <p>
+                                <ul>
+                                    <li>Customer expected the sales order to successfully create upon import, without receiving a duplicate key error 2601</li>
+                                    <li>Customer ran the trial balance report and expected debits to equal credits for the time period selected</li>
+                                    <li>Customer expected the posting of the invoice to lead to a balanced journal entry</li>
+                                    <li>Customer epxected the value of the credit on the transaction tobe $30.59 and instead it read $200.59.</li>
+                                    <li>Customer expected the validated delivery to post to the GL</li>
+                                </ul>
+                            </p>
                             <p><b>Note: "An error should not occur" isn't a valid customer expectation, be specific about what you want to happen instead.</b></p>
                         </div>
                         <div class="modal-footer">
@@ -513,8 +564,12 @@
                             <h2>Customer Expectations Help</h2>
                         </div>
                         <div class="modal-body">
-                            <p>If this is a defect, then this is what the customer is expecting in terms of a fix, allbeit a hot fix or next patch. If this is an enhancement request then it should be entered on the Sage Ideation site. If this is a question, then this should define when the question needs to be answered by. </p>
-                            <p><b>Note: Define what will happen if the expectations aren't met.</b> Example: A hot fix is requested for a delivery date in two weeks, what will happen to the project if that doesn't happen? What are the implications to Sage, the partner and the customer?</p>
+                            <p>
+                                If this is a defect, this is what the customer is expecting in terms of a fix, albeit a hot fix or next patch. </br>
+                                If this is a question then this should define when the question needs to be answered by. </br>
+                            </p>
+                            <p><b>Note: Define what will happen if the expectations aren't met.</b></br>
+                                If a hot fix is requested for a delivery date in two weeks, what will happen to the project if that doesn't happen? What are the implications to Sage, the partner and the customer?</p>
                         </div>
                         <div class="modal-footer">
                             <h3>Customer Expectations Help</h3>
@@ -541,8 +596,8 @@
                             <h2>Has Workaround Help</h2>
                         </div>
                         <div class="modal-body">
-                            <p>Check this if there is a workaround. If this is no workaround, leave this unchecked. <b>Do not</b> leave this unchecked if there is a workaround. <b>Do not</b> state a workaround in the additional information section or anywhere else without checking this box.</p>                            
-                            <p>If there is a workaround a new checkbox will pop up asking if the workaround is acceptable from the customer's point of view. Check this box if it is acceptable, uncheck it if the customer finds the workaround is unacceptable.</p>
+                            <p>Check this if there is a workaround. If there is no workaround, leave this unchecked. <b>Do not</b> leave this unchecked if there is a workaround. <b>Do not</b> state a workaround in the additional information section or anywhere else without checking this box.</p>                            
+                            <p>If there is a workaround a new checkbox will pop up asking if the workaround is acceptable from the customer's point of view. Check this box if the workaround is acceptable to the customer. Uncheck it if the customer finds the workaround is unacceptable for their daily business needs.</p>
                             <p>If the workaround is not acceptable, define why <b>from the customer's perspective</b> the workaround is not acceptable. Do not explain from Sage's perspective why the workaround is not acceptable, retrieve the reason from the customer. You may be required to follow up with the customer more than one time to fully understand why it isn't acceptable.</p>
                         </div>
                         <div class="modal-footer">
@@ -577,7 +632,8 @@
                             <h2>Is Duplicable Help</h2>
                         </div>
                         <div class="modal-body">
-                            <p>Check the box if you can duplicate. If you cannot duplicate <b>state the reason why you cannot</b>.</p>
+                            <p>Check the box if you can duplicate the customer's issue on an in-house image or system. If you cannot duplicate <b>state the reason why you cannot and what you have tried.</b>.</p>
+                            <p><b>NoteL you must reproduce the issue on a virtual machine before submitting a defect. There will be exceptions, but those should be rare.</b></p>
                         </div>
                         <div class="modal-footer">
                             <h3>Is Duplicable Help</h3>
@@ -604,7 +660,7 @@
                             <h2>Location Where Duplicated Help</h2>
                         </div>
                         <div class="modal-body">
-                            <p>Define the machine within Virtual Cloud Director where you duplicated this issue. In the situation where complex defects are submitted, and especially when the problem requires set up, the mentor team will leverage this machine to save time when reproducing an issue.</p>
+                            <p>Define the machine within Virtual Cloud Director where you duplicated this issue. In the situation where complex defects are submitted, and especially when the problem requires set up, the mentor team will leverage this machine to save time when reproducing an issue, should the machine still be available.</p>
                             <p><b>Note: You must make a valid attempt to reproduce the issue on your machine before submitting a defect</b>.</p>
                         </div>
                         <div class="modal-footer">

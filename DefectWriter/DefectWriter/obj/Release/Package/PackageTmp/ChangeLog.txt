@@ -1,3 +1,9 @@
+03/25/2016
+- Added help for most all fields
+
+03/23/2016
+- Updated database type and version to default to N/A
+
 03/20/2016	
 - Altered frequency drop down to remove 75%, 50%, 25%, and unknown. 
 - Added change log

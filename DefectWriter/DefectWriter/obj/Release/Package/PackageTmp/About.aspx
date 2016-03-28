@@ -6,7 +6,7 @@
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
     <h2>
-        Defect Writer 1.1</h2>
+        Defect Writer 1.2</h2>
     <p>
         Author: Bob Delamater
     </p>
