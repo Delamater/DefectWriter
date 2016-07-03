@@ -39,6 +39,9 @@
                             <asp:MenuItem NavigateUrl="~/DefectEntry.aspx" Text="New Defect" 
                                 Value="New Defect"></asp:MenuItem>
                         </asp:MenuItem>
+                        <asp:MenuItem Text="Forms" Value="Forms">
+                            <asp:MenuItem NavigateUrl="~/GeneralTroubleshooting.aspx" Text="General Troubleshooting" Value="General Troubleshooting"></asp:MenuItem>
+                        </asp:MenuItem>
                         <asp:MenuItem NavigateUrl="~/About.aspx" Text="About">
                             <asp:MenuItem NavigateUrl="~/ChangeLog.aspx" Text="Change Log" Value="Change Log"></asp:MenuItem>
                         </asp:MenuItem>

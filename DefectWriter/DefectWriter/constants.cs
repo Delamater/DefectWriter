@@ -11,6 +11,10 @@ namespace DefectWriter
         public const string kYes = "Yes";
         public const string kNotApplicable = "N/A";
 
+        //Word Document temporary storage location
+        public const string kFileSaveLocation = @"c:\temp\";
+
+        public enum TemplateType { GeneralTroubleshooting };
         
     }
 }
