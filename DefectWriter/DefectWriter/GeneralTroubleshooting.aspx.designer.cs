@@ -31,13 +31,13 @@ namespace DefectWriter {
         protected global::System.Web.UI.WebControls.TextBox txtClientType;
         
         /// <summary>
-        /// txtOperSystem control.
+        /// txtServerOperSystem control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtOperSystem;
+        protected global::System.Web.UI.WebControls.TextBox txtServerOperSystem;
         
         /// <summary>
         /// txtDescription control.
@@ -101,6 +101,15 @@ namespace DefectWriter {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtHowWasDataEntered;
+        
+        /// <summary>
+        /// txtWhatHasChanged control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtWhatHasChanged;
         
         /// <summary>
         /// txtFrequency control.
@@ -175,67 +184,175 @@ namespace DefectWriter {
         protected global::System.Web.UI.WebControls.TextBox txtNextSteps;
         
         /// <summary>
-        /// TextBox12 control.
+        /// txtSolution control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox12;
+        protected global::System.Web.UI.WebControls.TextBox txtSolution;
         
         /// <summary>
-        /// CheckBox1 control.
+        /// chkAreScreenshotsAttached control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox1;
+        protected global::System.Web.UI.WebControls.CheckBox chkAreScreenshotsAttached;
         
         /// <summary>
-        /// chkFusionKB control.
+        /// txtWebExLink control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkFusionKB;
+        protected global::System.Web.UI.WebControls.TextBox txtWebExLink;
         
         /// <summary>
-        /// chkLISA control.
+        /// txtFusion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkLISA;
+        protected global::System.Web.UI.WebControls.TextBox txtFusion;
         
         /// <summary>
-        /// chkSAM control.
+        /// txtLISA control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkSAM;
+        protected global::System.Web.UI.WebControls.TextBox txtLISA;
         
         /// <summary>
-        /// chkPatchFinder control.
+        /// txtSAM control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkPatchFinder;
+        protected global::System.Web.UI.WebControls.TextBox txtSAM;
         
         /// <summary>
-        /// chkGoogle control.
+        /// txtPatchFinder control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkGoogle;
+        protected global::System.Web.UI.WebControls.TextBox txtPatchFinder;
+        
+        /// <summary>
+        /// txtGoogle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtGoogle;
+        
+        /// <summary>
+        /// txtStepsToDupe control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtStepsToDupe;
+        
+        /// <summary>
+        /// chkIsDuplicable control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkIsDuplicable;
+        
+        /// <summary>
+        /// txtVersionDuped control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtVersionDuped;
+        
+        /// <summary>
+        /// chkDiscussedWithMentor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkDiscussedWithMentor;
+        
+        /// <summary>
+        /// txtLisaTicketNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtLisaTicketNumber;
+        
+        /// <summary>
+        /// txtAdditionalDetail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtAdditionalDetail;
+        
+        /// <summary>
+        /// chkIsSQlProfilerAttached control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkIsSQlProfilerAttached;
+        
+        /// <summary>
+        /// chkIsX3DebuggerTraceAttached control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkIsX3DebuggerTraceAttached;
+        
+        /// <summary>
+        /// chkIsTraDirectoryRecovered control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkIsTraDirectoryRecovered;
+        
+        /// <summary>
+        /// chkIsALogSupRecovered control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkIsALogSupRecovered;
+        
+        /// <summary>
+        /// txtNotes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNotes;
         
         /// <summary>
         /// TabName control.

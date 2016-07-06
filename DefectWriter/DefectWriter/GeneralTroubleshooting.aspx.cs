@@ -17,6 +17,10 @@ namespace DefectWriter
         OfficeMgr om = new OfficeMgr();
         TroubleshootingGeneral gtt = new TroubleshootingGeneral();
 
+        TroubleshootingGeneral.Questions clsQuestions = new TroubleshootingGeneral.Questions();
+
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
             //TabName.Value = Request.Form[TabName.UniqueID];
@@ -27,28 +31,16 @@ namespace DefectWriter
             //om.CreateWordProcessingDocumentWithStyle(@"c:\temp\GeneralTroubleshooting01.docx");
             try
             {
-                TroubleshootingGeneral.Questions clsQuestions = new TroubleshootingGeneral.Questions();
-                TroubleshootingGeneral.WebEx clsWebEx = new TroubleshootingGeneral.WebEx();
-                TroubleshootingGeneral.Environment clsEnvironment = new TroubleshootingGeneral.Environment();
-                TroubleshootingGeneral.Search clsSearch = new TroubleshootingGeneral.Search();
-                TroubleshootingGeneral.Screenshots clsScreenshots = new TroubleshootingGeneral.Screenshots();
-                TroubleshootingGeneral.Duplicate clsDuplicate = new TroubleshootingGeneral.Duplicate();
-                TroubleshootingGeneral.Retrieve clsRetrieve = new TroubleshootingGeneral.Retrieve();
-                TroubleshootingGeneral.Notes clsNotes = new TroubleshootingGeneral.Notes();
-                
-                clsQuestions.Description = "Some problem description here";
-                clsQuestions.WhatWereTheyDoing = "Who knows. They never know what they were doing when you ask";
-                clsQuestions.Version = "V7.02";
-
+                SetQuestionsProperties();
                 HybridDictionary hbClasses = new HybridDictionary();
                 hbClasses.Add("Ask", clsQuestions);
-                hbClasses.Add("WebEx", clsWebEx);
-                hbClasses.Add("Environment", clsEnvironment);
-                hbClasses.Add("Search", clsSearch);
-                hbClasses.Add("Screenshots", clsScreenshots);
-                hbClasses.Add("Duplicate", clsDuplicate);
-                hbClasses.Add("Retrieve", clsRetrieve);
-                hbClasses.Add("Notes", clsNotes);
+                //hbClasses.Add("WebEx", clsWebEx);
+                //hbClasses.Add("Environment", clsEnvironment);
+                //hbClasses.Add("Search", clsSearch);
+                //hbClasses.Add("Screenshots", clsScreenshots);
+                //hbClasses.Add("Duplicate", clsDuplicate);
+                //hbClasses.Add("Retrieve", clsRetrieve);
+                //hbClasses.Add("Notes", clsNotes);
 
 
                 gtt.CreateGeneralTroubleshootingDocument(hbClasses);
@@ -58,6 +50,49 @@ namespace DefectWriter
                 Response.Write(ex.Message);
             }
             
+        }
+
+        protected void SetQuestionsProperties()
+        {
+            clsQuestions.ClientType = rdoClientType.SelectedValue;
+            clsQuestions.ClientType = txtClientType.Text;
+            clsQuestions.ServerOperatingSystem = txtServerOperSystem.Text;
+            clsQuestions.Description = txtDescription.Text;
+            clsQuestions.WhatWereTheyDoing = txtWhat.Text;
+            clsQuestions.CustomerVersion = txtVersion.Text;
+            clsQuestions.PatchLevel = txtPatchLevel.Text;
+            clsQuestions.WhereDoesItOccur = txtWhereIsItHappening.Text;
+            clsQuestions.IsFirstTimeHappened = chkFirstTimeHappening.Checked;
+            clsQuestions.HowWasDataEntred = txtHowWasDataEntered.Text;
+            //clsQuestions.WhatHasChanged = txtWhatHasChanged.Text;
+            clsQuestions.FrequencyOfIssue = txtFrequency.Text;
+            clsQuestions.AllUsersOrSome = txtAllUsersOrSome.Text;
+            clsQuestions.IsThisAreaModified = chkHasModifications.Checked;
+            clsQuestions.IfModifiedHow = txtIfModificationsWhat.Text;
+            clsQuestions.AllQuestionsAskedAndAnswers = txtQuestionsAndAnswers.Text;
+            clsQuestions.WhatHaveYouAlreadyTried = txtWhatHaveYouTried.Text;
+            clsQuestions.WhatHaveTheyAlreadyTried = txtWhatHaveTheyTried.Text;
+            clsQuestions.NextSteps = txtNextSteps.Text;
+            clsQuestions.Solution = txtSolution.Text;
+            clsQuestions.AreScreenshotsAttached = chkAreScreenshotsAttached.Checked;
+            clsQuestions.WebExLink = txtWebExLink.Text;
+            clsQuestions.FusionSearchTerms = txtFusion.Text;
+            clsQuestions.LisaSearchTerms = txtLISA.Text;
+            clsQuestions.SamSearchTerms = txtSAM.Text;
+            clsQuestions.PatchFinderSearchTerms = txtPatchFinder.Text;
+            clsQuestions.GoogleSearchTerms = txtGoogle.Text;
+            clsQuestions.StepsToDuplicate = txtStepsToDupe.Text;
+            clsQuestions.IsDuplicable = chkIsDuplicable.Checked;
+            clsQuestions.VersionDuped = txtVersionDuped.Text;
+            clsQuestions.DiscussedWithMentor = chkDiscussedWithMentor.Checked;
+            clsQuestions.LisaTicketNumber = txtLisaTicketNumber.Text;
+            clsQuestions.AdditionalDetail = txtAdditionalDetail.Text;
+            clsQuestions.IsSqlProfilerAttached = chkIsSQlProfilerAttached.Checked;
+            clsQuestions.IsX3DebuggerTraceAttached = chkIsX3DebuggerTraceAttached.Checked;
+            clsQuestions.IsTraDirectoryRecovered = chkIsTraDirectoryRecovered.Checked;
+            clsQuestions.IsAlogSupLogRecovered = chkIsALogSupRecovered.Checked;
+            clsQuestions.Notes = txtNotes.Text;
+
         }
 
         protected void Button1_Click(object sender, EventArgs e)

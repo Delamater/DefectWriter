@@ -8,9 +8,10 @@
             height: 20px;
         }
         .auto-style3 {
-            width: 502px;
+            width: 150px;
+            height: 20px;
         }
-    </style>
+        </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
   <title>Bootstrap Case</title>
@@ -26,9 +27,9 @@
         <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
         <li><a data-toggle="tab" href="#document">Document</a></li>
         <li><a data-toggle="tab" href="#webex">Webex</a></li>
-        <%--<li><a data-toggle="tab" href="#environment">Environment</a></li>--%>
+            <%--<li><a data-toggle="tab" href="#environment">Environment</a></li>--%>
         <li><a data-toggle="tab" href="#search">Search</a></li>
-        <li><a data-toggle="tab" href="#screenshots">Screenshots</a></li>
+            <%--<li><a data-toggle="tab" href="#screenshots">Screenshots</a></li>--%>
         <li><a data-toggle="tab" href="#duplicate">Duplicate</a></li>
         <li><a data-toggle="tab" href="#retrieve">Retrieve</a></li>
         <li><a data-toggle="tab" href="#notes">Notes</a></li>
@@ -74,11 +75,11 @@
                             </tr>
                             <tr>
                                 <td class="control-label col-sm-2 text-nowrap text-right" style="width: 502px" align="right">
-                                    <label class="control-label col-sm-2" for="txtOperatingSystem">Operating system</label>
+                                    <label class="control-label col-sm-2" for="txtOperatingSystem">Server Operating system</label>
                                 </td>
                                 <td>
                                     <div class="col-sm-10">
-                                        <asp:TextBox ID="txtOperSystem" class="form-control" runat="server" placeholder="Operating System Details"></asp:TextBox>
+                                        <asp:TextBox ID="txtServerOperSystem" class="form-control" runat="server" placeholder="Operating System Details"></asp:TextBox>
                                     </div>
                                 </td>
                                 <td>&nbsp;</td>
@@ -99,7 +100,7 @@
                         </tr>
                         <tr>
                             <td align="right" class="control-label col-sm-2 text-nowrap text-right">
-                                <label class="control-label col-sm-2" id="tabWhat" for="txtWhat">What?</label>
+                                <label class="control-label col-sm-2" id="tabWhat" for="txtWhat">What Were They Doing?</label>
                             </td>
                             <td>
                                 <asp:TextBox ID="txtWhat" runat="server" CssClass="form-control" placeholder="What Were They Doing When They Got The Issue?"></asp:TextBox>
@@ -109,7 +110,7 @@
                         </tr>
                         <tr>
                             <td align="right" class="control-label col-sm-2 text-nowrap text-right">
-                                <label class="control-label col-sm-2" id="lblVersion" for="txtVersion">Version</label></td>
+                                <label class="control-label col-sm-2" id="lblVersion" for="txtVersion">Customer Version</label></td>
                             <td>
                                 <asp:TextBox ID="txtVersion" CssClass="form-control" runat="server" placeholder="Document Client and Server Version"></asp:TextBox>
                             </td>
@@ -125,7 +126,7 @@
                         </tr>
                         <tr>
                             <td align="right" class="control-label col-sm-2 text-nowrap text-right">
-                                <label class="control-label col-sm-2" id="tabWhat2" for="what">Where Is It Happening?</label></td>
+                                <label class="control-label col-sm-2" id="tabWhere" for="what">Where Is It Happening?</label></td>
                             <td>
                                 <asp:TextBox ID="txtWhereIsItHappening" runat="server" CssClass="form-control"></asp:TextBox>
                             </td>
@@ -133,7 +134,7 @@
                         </tr>
                         <tr>
                             <td align="right" class="control-label col-sm-2 text-nowrap text-right">
-                                <label class="control-label col-sm-2" id="tabWhat11" for="what">First Time Happening?</label></td>
+                                <label class="control-label col-sm-2" id="lblFirstTime" for="what">First Time Happening?</label></td>
                             <td>
                                 <asp:CheckBox ID="chkFirstTimeHappening" runat="server" CssClass="form-control" />
                             </td>
@@ -141,15 +142,24 @@
                         </tr>
                         <tr>
                             <td align="right" class="control-label col-sm-2 text-nowrap text-right">
-                                <label class="control-label col-sm-2" id="tabWhat4" for="what">How Was the Data Entered?</label></td>
+                                <label class="control-label col-sm-2" id="lblHowDatEntered" for="what">How Was the Data Entered?</label></td>
                             <td>
                                 <asp:TextBox ID="txtHowWasDataEntered" runat="server" CssClass="form-control"></asp:TextBox>
                             </td>
                             <td>&nbsp;</td>
                         </tr>
                         <tr>
+                            <td align="right">
+                                <label class="control-label col-sm-2 text-nowrap text-right" for="txtWhatHasChanged">What Has Changed</label>
+                            </td>
+                            <td>
+                                <asp:TextBox runat="server" ID="txtWhatHasChanged" placeholder="What Has Changed?" CssClass="form-control"></asp:TextBox>
+                            </td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
                             <td align="right" class="control-label col-sm-2 text-nowrap text-right">
-                                <label class="control-label col-sm-2" id="tabWhat6" for="what">Frequency</label></td>
+                                <label class="control-label col-sm-2" id="lblFrequency" for="what">Frequency</label></td>
                             <td>
                                 <asp:TextBox ID="txtFrequency" runat="server" CssClass="form-control"></asp:TextBox>
                             </td>
@@ -157,7 +167,7 @@
                         </tr>
                         <tr>
                             <td align="right" class="control-label col-sm-2 text-nowrap text-right">
-                                <label class="control-label col-sm-2" id="tabWhat7" for="what">All Users or Some?</label></td>
+                                <label class="control-label col-sm-2" id="lblAllUsersOrSome" for="what">All Users or Some?</label></td>
                             <td>
                                 <asp:TextBox ID="txtAllUsersOrSome" runat="server" CssClass="form-control"></asp:TextBox>
                             </td>
@@ -165,7 +175,7 @@
                         </tr>
                         <tr>
                             <td align="right" class="control-label col-sm-2 text-nowrap text-right">
-                                <label class="control-label col-sm-2" id="tabWhat8" for="what">Has Modifications</label></td>
+                                <label class="control-label col-sm-2" id="lblHasModifications" for="what">Has Modifications</label></td>
                             <td>
                                 <asp:CheckBox ID="chkHasModifications" runat="server" CssClass="form-control" />
                             </td>
@@ -173,7 +183,7 @@
                         </tr>
                         <tr>
                             <td align="right" class="control-label col-sm-2 text-nowrap text-right">
-                                <label class="control-label col-sm-2" id="tabWhat9" for="what">If Modifications, What?</label></td>
+                                <label class="control-label col-sm-2" id="lblIfModifiedHow" for="what">If Modifications, What?</label></td>
                             <td>
                                 <asp:TextBox ID="txtIfModificationsWhat" runat="server" CssClass="form-control"></asp:TextBox>
                             </td>
@@ -181,7 +191,7 @@
                         </tr>
                         <tr>
                             <td align="right" class="control-label col-sm-2 text-nowrap text-right">
-                                <label class="control-label col-sm-2" id="tabWhat12" for="what">Questions/Answers</label></td>
+                                <label class="control-label col-sm-2" id="lblQuestionsAnswers" for="what">Questions/Answers</label></td>
                             <td>
                                 <asp:TextBox ID="txtQuestionsAndAnswers" runat="server" CssClass="form-control"></asp:TextBox>
                             </td>
@@ -189,7 +199,7 @@
                         </tr>
                         <tr>
                             <td align="right" class="control-label col-sm-2 text-nowrap text-right">
-                                <label class="control-label col-sm-2" id="tabWhat13" for="what">What Have You Already Tried?</label></td>
+                                <label class="control-label col-sm-2" id="lblWhatHasBeenTried" for="what">What Have You Already Tried?</label></td>
                             <td>
                                 <asp:TextBox ID="txtWhatHaveYouTried" runat="server" CssClass="form-control"></asp:TextBox>
                             </td>
@@ -197,7 +207,7 @@
                         </tr>
                         <tr>
                             <td align="right" class="control-label col-sm-2 text-nowrap text-right">
-                                <label class="control-label col-sm-2" id="tabWhat14" for="what">What Have They Already Tried?</label></td>
+                                <label class="control-label col-sm-2" id="lblWhatHaveTheyTried" for="what">What Have They Already Tried?</label></td>
                             <td>
                                 <asp:TextBox ID="txtWhatHaveTheyTried" runat="server" CssClass="form-control"></asp:TextBox>
                             </td>
@@ -205,7 +215,7 @@
                         </tr>
                         <tr>
                             <td align="right" class="control-label col-sm-2 text-nowrap text-right">
-                                <label class="control-label col-sm-2" id="tabWhat15" for="what">Next Steps</label></td>
+                                <label class="control-label col-sm-2" id="lblNextSteps" for="what">Next Steps</label></td>
                             <td>
                                 <asp:TextBox ID="txtNextSteps" runat="server" CssClass="form-control"></asp:TextBox>
                             </td>
@@ -213,9 +223,16 @@
                         </tr>
                         <tr>
                             <td align="right" class="control-label col-sm-2 text-nowrap text-right">
-                                <label class="control-label col-sm-2" id="tabWhat16" for="what">Solution</label></td>
+                                <label class="control-label col-sm-2" id="lblSolution" for="what">Solution</label></td>
                             <td>
-                                <asp:TextBox ID="TextBox12" runat="server" CssClass="form-control"></asp:TextBox>
+                                <asp:TextBox ID="txtSolution" runat="server" CssClass="form-control"></asp:TextBox>
+                            </td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td align="right"><label class="control-label col-sm-2 text-nowrap text-right" id="lblAllScreenshotsAttached">Are All Pertinent Screenshots Attached To Case</label></td>
+                            <td>
+                                <asp:CheckBox runat="server" ID="chkAreScreenshotsAttached"/>
                             </td>
                             <td>&nbsp;</td>
                         </tr>
@@ -254,45 +271,170 @@
             </div>
             <div id="webex" class="tab-pane fade">
                 <h3>Connect Via web-ex</h3>
-                <asp:CheckBox ID="CheckBox1" runat="server" Text="Issue Demonstrated" />
+                <td class="control-label col-sm-2 text-nowrap text-right">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="txtWebExLink">Web-ex Link</label>
+                        <asp:TextBox ID="txtWebExLink" runat="server" CssClass="form-control" Width="75%"></asp:TextBox>
+                    </div>
+                </td>                
             </div>
-<%--            <div id="environment" class="tab-pane fade">
+            <%--            <div id="environment" class="tab-pane fade">
                 <h3>Document Environment</h3>
 
             </div>--%>
             <div id="search" class="tab-pane fade">
                 <h3>Search</h3>
                 <div class="form-group">
-                    <asp:CheckBox ID="chkFusionKB" Text="Fusion KB" runat="server" />
-                </div>
-                <div class="form-group">
-                    <asp:CheckBox ID="chkLISA" Text="LISA" runat="server" />
-                </div>
-                <div class="form-group">
-                    <asp:CheckBox ID="chkSAM" Text="SAM" runat="server" />
-                </div>
-                <div class="form-group">
-                    <asp:CheckBox ID="chkPatchFinder" Text="Patch Finder" runat="server" />
-                </div>
-                <div class="form-group">
-                    <asp:CheckBox ID="chkGoogle" Text="Google" runat="server" />
-                </div>                    
+                    <table style="width: 100%;">
+                        <tr>
+                            <td style="width: 150px">
+                                <label class="control-label col-sm-2 text-nowrap text-right" for="txtFusion">Fusion KB</label>
+                            </td>
+                            <td><asp:TextBox ID="txtFusion" runat="server" placeholder="Fusion KB Link" CssClass="form-control" Rows="4" TextMode="MultiLine"></asp:TextBox></td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 150px">
+                                <label class="control-label col-sm-2 text-nowrap text-right" for="txtLISA">LISA Search Terms</label>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="txtLISA" runat="server" placeholder="LISA Search Terms" CssClass="form-control" Rows="4" TextMode="MultiLine"></asp:TextBox>
+                            </td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 150px">
+                                <label class="control-label col-sm-2 text-nowrap text-right">SAM</label>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="txtSAM" runat="server" placeholder="SAM Search Terms" CssClass="form-control" Rows="4" TextMode="MultiLine"></asp:TextBox>
+                            </td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 150px">
+                                <label class="control-label col-sm-2 text-nowrap text-right" for="txtPatchFinder">Patch Finder Search Terms</label>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="txtPatchFinder" placeholder="Patch Finder Search Terms" runat="server" CssClass="form-control" Rows="4" TextMode="MultiLine"></asp:TextBox>
+                            </td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 150px">
+                                <label class="control-label col-sm-2 text-nowrap text-right" for="txtGoogle">Google Search Terms</label>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="txtGoogle" runat="server" placeholder="Google Search Terms, seperate different searches with semicolon" CssClass="form-control" Rows="4" TextMode="MultiLine"></asp:TextBox>
+                            </td>
+                        </tr>
+                    </table>
+                </div>              
             </div>
-            <div id="screenshots" class="tab-pane fade">
+            <%--<div id="screenshots" class="tab-pane fade">
                 <h3>Ask for Screenshots</h3>
-                <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-            </div>
+                <p></p>
+            </div>--%>
             <div id="duplicate" class="tab-pane fade">
                 <h3>Attempt to duplicate issuein-house</h3>
-                <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                <div class="form-group">
+                    <table style="width: 100%;">
+                        <tr>
+                            <td style="width: 150px">
+                                <label class="control-label col-sm-2 text-nowrap text-right" for="txtStepsToDupe">Steps To Duplicate</label>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="txtStepsToDupe" CssClass="form-control" runat="server" placeholder="Best attempt to document steps to duplicate" Rows="4" TextMode="MultiLine"></asp:TextBox>
+                            </td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 150px">
+                                <label class="control-label col-sm-2 text-nowrap text-right" for="txtVersionDuped">Version Duplicated</label>
+                            </td>
+                            <td>
+                                <asp:CheckBox runat="server" ID="chkIsDuplicable" text="Is Duplicable"/>
+                            </td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 150px">&nbsp;</td>
+                            <td>
+                                <asp:TextBox runat="server" ID="txtVersionDuped" CssClass="form-control" placeholder="Version Duplicated"></asp:TextBox>
+                            </td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 150px">&nbsp;</td>
+                            <td>
+                                <asp:CheckBox runat="server" ID="chkDiscussedWithMentor" Text="Discussed With Mentor?" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 150px">&nbsp;</td>
+                            <td>
+                                <asp:TextBox ID="txtLisaTicketNumber" runat="server" CssClass="form-control" placeholder="LISA Ticket Number"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style3"><label class="control-label col-sm-2 text-nowrap text-right">Not Duplicable</label></td>
+                            <td class="auto-style2">
+                                <asp:TextBox ID="txtAdditionalDetail" runat="server" placeholder="Additional Detail" CssClass="form-control" Rows="6" TextMode="MultiLine"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 150px">&nbsp;</td>
+                            <td>
+                                <asp:CheckBox ID="chkIsSQlProfilerAttached" runat="server" Text="SQL Profiler Attached" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 150px">&nbsp;</td>
+                            <td>
+                                <asp:CheckBox ID="chkIsX3DebuggerTraceAttached" runat="server" Text="X3 Debugger Trace Attached" />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </div>
             <div id="retrieve" class="tab-pane fade">
                 <h3>Retrieve</h3>
-                <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                <div class="form-group">
+                    <table style="width:100%;">
+                        <tr>
+                            <%--<td style="width: 150px">&nbsp;</td>--%>
+                            <td>
+                                <asp:CheckBox ID="chkIsTraDirectoryRecovered" runat="server" Text="TRA Directory Recovered?" />
+                            </td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <%--<td style="width: 150px">&nbsp;</td>--%>
+                            <td>
+                                <asp:CheckBox ID="chkIsALogSupRecovered" runat="server" Text="ALOGSUP Log Recovered?" />
+                            </td>
+                            <td>
+                                &nbsp;
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </div>
             <div id="notes" class="tab-pane fade">
                 <h3>Document In Case Notes</h3>
-                <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                <div class="form-group">
+                    <table style="width:100%;">
+                        <tr>
+                            <%--<td style="width: 150px">
+                                <label class="control-label col-sm-2 text-nowrap text-right">Notes:</label>
+                            </td>--%>
+                            <td>
+                                <asp:TextBox runat="server" ID="txtNotes" placeholder="Case Notes" TextMode="MultiLine" Rows="15" CssClass="form-control"></asp:TextBox>
+                            </td>
+                            <%--<td>&nbsp;</td>--%>
+                        </tr>
+                    </table>
+                </div>
 
                 <div class="container" style="width:auto">
                     <asp:HiddenField ID="TabName" runat="server" />

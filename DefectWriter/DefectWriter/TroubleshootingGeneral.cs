@@ -21,7 +21,7 @@ namespace DefectWriter
             //Directive To Ask These Questions
             public string   Description                 { get; set; }
             public string   WhatWereTheyDoing           { get; set; }
-            public string   Version                     { get; set; }
+            public string   CustomerVersion             { get; set; }
             public string   PatchLevel                  { get; set; }
             public string   WhereDoesItOccur            { get; set; } //Production or pilot?
             public bool     IsFirstTimeHappened         { get; set; }
@@ -43,11 +43,12 @@ namespace DefectWriter
 
 
             //WebEx
-            public bool     IsIssueDemonstratedViaWebEx { get; set; }
+            public string WebExLink                     { get; set; }
 
             //Environment
             public string ClientType                    { get; set; }
             public string ClientSystemEnvironment       { get; set; }
+            public string ServerOperatingSystem         { get; set; }
 
             //Searching
             public string FusionSearchTerms             { get; set; }
@@ -57,32 +58,33 @@ namespace DefectWriter
             public string GoogleSearchTerms             { get; set; }
 
             //Get Screenshots
+            public bool AreScreenshotsAttached          { get; set; }
+
             //All errors
             //Pertinent Setup
 
 
             //Attempt to duplicate issue in-house
-            public bool DidTryToDuplicate               { get; set; }
-            public string CurrentVersion                { get; set; }
-            public string CustomersVersion              { get; set; }
+            public string StepsToDuplicate              { get; set; }
+            public string VersionDuped                  { get; set; }
             public bool IsDuplicable                    { get; set; }
 
             //If duplicable
-            public bool DiscussedWithMentorDuplicable   { get; set; }
-            public string IsLisaTicketExists            { get; set; }
+            public bool DiscussedWithMentor   { get; set; }
+            public string LisaTicketNumber              { get; set; }
 
             //If Not duplicable
             public string AdditionalDetail              { get; set; }
-            public string WebExLink                     { get; set; }
             public bool IsSqlProfilerAttached           { get; set; }
             public bool IsX3DebuggerTraceAttached       { get; set; }
-            public bool DiscussedWithMentorNotDuplicable{ get; set; }
+            
 
             //Retrieve
-            public bool IsTraDirectoryRecovered { get; set; }
-            public bool IsAlogSupLogRecovered { get; set; }
+            public bool IsTraDirectoryRecovered         { get; set; }
+            public bool IsAlogSupLogRecovered           { get; set; }
 
-            
+            //Notes
+            public string Notes                         { get; set; }
         }
 
         public class WebEx
@@ -147,6 +149,7 @@ namespace DefectWriter
                     PropertyInfo[] properties = typeof(Questions).GetProperties();
                     AddText(properties, entry);
                 }
+
                 //else if (entry.Key.ToString() == "WebEx") 
                 //{
                 //    DocTexts.Add(new DocumentText() { HeadingType = ht.Heading1, Text = "WebEx" });
@@ -198,11 +201,36 @@ namespace DefectWriter
  
         private void AddText(PropertyInfo[] properties, DictionaryEntry entry)
         {
+            System.Text.StringBuilder sb = new System.Text.StringBuilder();
+
             foreach (PropertyInfo property in properties)
             {
                 //hbDocumentText.Add(ht.Normal, property.ToString());
-                DocTexts.Add(new DocumentText() { HeadingType = ht.Normal, Text = property.GetValue(entry.Value).ToString() });
+                DocumentText dt = new DocumentText();
+                dt.Text = Convert.ToString(entry.Value ?? "");
+
+                sb.Append(property.Name);
+                sb.Append(": ");
+                sb.Append("</w:t><w:br/><w:t>"); //Newline for OpenXML
+
+                
+                
+                if (property.GetValue(entry.Value) != null)
+                {
+
+                    sb.Append(property.GetValue(entry.Value));
+                    DocTexts.Add(new DocumentText() { HeadingType = ht.Normal, Text = (sb.ToString()) });
+                    
+                    sb.Clear();
+
+                }
+                else
+                {
+                    sb.Append(string.Empty);
+                    DocTexts.Add(new DocumentText() { HeadingType = ht.Normal, Text = sb.ToString() });
+                }
             }
+
         }
 
     }
